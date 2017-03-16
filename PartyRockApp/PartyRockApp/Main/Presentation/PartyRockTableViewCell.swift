@@ -15,6 +15,16 @@ class PartyRockTableViewCell: UITableViewCell {
 
     func updateCell(partyRock: PartyRock) {
         videoTitle.text = partyRock.videoTitle
-//        videoPreviewImage.image = partyRock.imageUrl
+        let url = URL(string: partyRock.imageUrl)!
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+                DispatchQueue.global().sync {
+                    self.videoPreviewImage.image = UIImage(data: data)
+                }
+            } catch {
+                //FIXME handle the error
+            }
+        }
     }
 }

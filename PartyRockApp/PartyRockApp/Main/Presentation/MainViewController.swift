@@ -11,19 +11,12 @@ import UIKit
 
 class MainViewController: UIViewController, MainView
 {
-    var mainPresenter: MainPresenter
-    var partyRockTableAdapter: PartyRockTableAdapter
+    let maincomponent = MainComponent()
+    //Injected
+    var mainPresenter: MainPresenter?
     
-    // MARL: - Dependency creation
-    convenience init() {
-        self.init()
-        let maincomponent = MainComponent(mainView: self);
-        maincomponent.inject(mainViewToInject: self)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    //Injected
+    var partyRockTableAdapter: PartyRockTableAdapter?
     
     // MARK: - @IBOutlet
     @IBOutlet weak var mainTableView: UITableView!
@@ -32,6 +25,7 @@ class MainViewController: UIViewController, MainView
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        maincomponent.inject(mainView: self)
         
         mainTableView.delegate = partyRockTableAdapter
         mainTableView.dataSource = partyRockTableAdapter
@@ -52,9 +46,16 @@ class MainViewController: UIViewController, MainView
 
     }
     
-    func navigateToVideo() {
-        print("Navigating to Video")
-        performSegue(withIdentifier: "Video", sender: self)
-        
+    func navigateToVideo(selectedPartyRock: PartyRock) {
+        print("Navigating to Video " + selectedPartyRock.videoTitle)
+        performSegue(withIdentifier: "Video", sender: selectedPartyRock)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? VideoViewController {
+            if let party = sender as? PartyRock {
+                destination.partyRock = party   
+            }
+        }
     }
 }

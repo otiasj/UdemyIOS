@@ -13,6 +13,7 @@ import Foundation
 class PartyRockTableAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var partyRocks = [PartyRock]()
+    var clickListener: ClickListener?
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PartyRockTableViewCell", for: indexPath) as? PartyRockTableViewCell {
@@ -26,5 +27,12 @@ class PartyRockTableAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return partyRocks.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let clickListener = clickListener {
+            let selectedPartyRock = partyRocks[indexPath.row]
+            clickListener.onVideoSelected(partyRock: selectedPartyRock)
+        }
     }
 }

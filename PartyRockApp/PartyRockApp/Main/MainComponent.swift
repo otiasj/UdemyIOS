@@ -11,16 +11,13 @@ import Foundation
 
 class MainComponent {
     
-    private let mainModule: MainModule
+    private static var mainModule: MainModule?
     
-    init(mainView: MainView) {
-         mainModule = MainModule(mainView: mainView)
-    }
-    
-    // initialize the view properties
-    func inject(mainViewToInject: MainView) {
-        var mainViewToInject = mainViewToInject
-        mainViewToInject.mainPresenter = mainModule.provideMainPresenter()
-        mainViewToInject.partyRockTableAdapter = mainModule.providePartyRockTableAdapter()
+    func inject(mainView: MainViewController) {
+        MainComponent.mainModule = MainModule(mainView: mainView)
+        if let mainModule = MainComponent.mainModule {
+            mainView.mainPresenter = mainModule.provideMainPresenter()
+            mainView.partyRockTableAdapter = mainModule.providePartyRockTableAdapter()
+        }
     }
 }

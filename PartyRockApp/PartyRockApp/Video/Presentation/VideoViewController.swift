@@ -11,22 +11,32 @@ import UIKit
 
 class VideoViewController: UIViewController, VideoView
 {
+    // MARK: - injected fields
     var VideoPresenter: VideoPresenter = VideoPresenterImpl()
+    private var _partyRock: PartyRock!
     
+    // MARK: - parameters from segue
+    var partyRock: PartyRock {
+        get {
+            return self._partyRock
+        } set {
+            self._partyRock = newValue
+        }
+    }
+    
+    // MARK: - @IBOutlet
+    @IBOutlet weak var videoWebview: UIWebView!
+    @IBOutlet weak var titleLabel: UILabel!
+
     // MARK: - View lifecycle
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        titleLabel.text = partyRock.videoTitle
+        videoWebview.loadHTMLString(partyRock.videoUrl, baseURL: nil)
     }
     
-    // MARK: - @IBOutlet
-    
-    
-    // MARK: - @IBOutlet @IBAction
-    @IBAction func onLoadClick(_ sender: Any) {
-        VideoPresenter.load()
-    }
     
     // MARK: - Display logic
     

@@ -27,6 +27,7 @@
 		F925D1B71E79F69100BF521E /* PartyRockTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D1B61E79F69100BF521E /* PartyRockTableAdapter.swift */; };
 		F925D1BB1E7A02F800BF521E /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D1BA1E7A02F800BF521E /* MainComponent.swift */; };
 		F925D1BD1E7A046900BF521E /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D1BC1E7A046900BF521E /* MainModule.swift */; };
+		F925D1BF1E7A57E000BF521E /* ClickListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D1BE1E7A57E000BF521E /* ClickListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F925D1B61E79F69100BF521E /* PartyRockTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyRockTableAdapter.swift; sourceTree = "<group>"; };
 		F925D1BA1E7A02F800BF521E /* MainComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
 		F925D1BC1E7A046900BF521E /* MainModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
+		F925D1BE1E7A57E000BF521E /* ClickListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,25 +160,9 @@
 			children = (
 				F925D1BA1E7A02F800BF521E /* MainComponent.swift */,
 				F925D1BC1E7A046900BF521E /* MainModule.swift */,
-				F925D1871E79C7C400BF521E /* Data */,
-				F925D1881E79C7C400BF521E /* Domain */,
 				F925D1891E79C7C400BF521E /* Presentation */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		F925D1871E79C7C400BF521E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		F925D1881E79C7C400BF521E /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		F925D1891E79C7C400BF521E /* Presentation */ = {
@@ -200,25 +186,9 @@
 		F925D19B1E79ED4500BF521E /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				F925D19C1E79ED4500BF521E /* Data */,
-				F925D19D1E79ED4500BF521E /* Domain */,
 				F925D19E1E79ED4500BF521E /* Presentation */,
 			);
 			path = Video;
-			sourceTree = "<group>";
-		};
-		F925D19C1E79ED4500BF521E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		F925D19D1E79ED4500BF521E /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		F925D19E1E79ED4500BF521E /* Presentation */ = {
@@ -248,6 +218,7 @@
 			children = (
 				F925D18A1E79C7C400BF521E /* MainPresenter.swift */,
 				F925D18B1E79C7C400BF521E /* MainPresenterImpl.swift */,
+				F925D1BE1E7A57E000BF521E /* ClickListener.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -399,6 +370,7 @@
 				F925D18F1E79C7C400BF521E /* MainPresenterImpl.swift in Sources */,
 				F925D1B51E79F47800BF521E /* PartyRock.swift in Sources */,
 				F925D1A61E79ED4500BF521E /* VideoViewController.swift in Sources */,
+				F925D1BF1E7A57E000BF521E /* ClickListener.swift in Sources */,
 				F925D18E1E79C7C400BF521E /* MainPresenter.swift in Sources */,
 				F925D1A81E79EF3D00BF521E /* PartyRockTableViewCell.swift in Sources */,
 				F925D1BB1E7A02F800BF521E /* MainComponent.swift in Sources */,

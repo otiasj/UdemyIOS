@@ -151,14 +151,27 @@
                                     <constraint firstAttribute="height" constant="220" id="XSl-PB-MOB"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9l-DC-qB4">
+                                <rect key="frame" x="-0.5" y="323" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="B11-LZ-aJN" firstAttribute="leading" secondItem="XZQ-nm-0dY" secondAttribute="leading" id="6HG-7T-AdE"/>
+                            <constraint firstItem="u9l-DC-qB4" firstAttribute="centerY" secondItem="XZQ-nm-0dY" secondAttribute="centerY" id="6su-Pz-HbF"/>
                             <constraint firstAttribute="trailing" secondItem="B11-LZ-aJN" secondAttribute="trailing" id="X59-Qd-tXR"/>
+                            <constraint firstItem="u9l-DC-qB4" firstAttribute="width" secondItem="XZQ-nm-0dY" secondAttribute="width" id="cIa-DN-NgO"/>
                             <constraint firstItem="B11-LZ-aJN" firstAttribute="top" secondItem="XZQ-nm-0dY" secondAttribute="top" id="pqj-jM-lfQ"/>
+                            <constraint firstItem="u9l-DC-qB4" firstAttribute="centerX" secondItem="XZQ-nm-0dY" secondAttribute="centerX" id="rHa-Ff-QIh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="u9l-DC-qB4" id="EPz-85-bak"/>
+                        <outlet property="videoWebview" destination="B11-LZ-aJN" id="93p-NV-BDS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="og3-wh-R6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
