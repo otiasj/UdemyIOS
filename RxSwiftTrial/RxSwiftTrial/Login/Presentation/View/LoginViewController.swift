@@ -40,20 +40,22 @@ class LoginViewController: UIViewController, LoginView
     // MARK: - Display logic
     func displayMessage(Message : String) {
         print("Display \(Message)")
+        titleLabel.text = Message
     }
     
     func showErrorDialog(ErrorMessage : String) {
         print("Display errort dialog : \(ErrorMessage)")
+        titleLabel.text = ErrorMessage
     }
     
     func showErrorMessage(ErrorMessage : String) {
         print("Show errort message : \(ErrorMessage)")
+        titleLabel.text = ErrorMessage
     }
     
     func navigateToMain() {
         print("Navigating to Main")
         performSegue(withIdentifier: "Main", sender: self)
-        
     }
 
 }

@@ -23,7 +23,6 @@ class LoginPresenterImpl: LoginPresenter
     }
     
     // MARK: - logic
-    
     func load()
     {
         print("Login loading...")
@@ -36,12 +35,15 @@ class LoginPresenterImpl: LoginPresenter
             .subscribe(
                 onNext: { loginEntity in
                     print("onNext")
+                    self.onResponse(loginEntity)
             },
                 onError: { error in
                     print(error)
+                    self.onError(error)
             },
                 onCompleted: {
                     print("Completed")
+                    self.onComplete()
             },
                 onDisposed: {
                     print("Disposed")
@@ -58,7 +60,7 @@ class LoginPresenterImpl: LoginPresenter
     }
     
     func onError(_ error: Error) {
-        
+        loginView.showErrorDialog(ErrorMessage: error.localizedDescription)
     }
     
     func onComplete()
