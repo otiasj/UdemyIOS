@@ -8,11 +8,13 @@
 //
 
 protocol MainView {
+    //the instances to inject
     var mainPresenter: MainPresenter { get set }
+    var partyRockTableAdapter: PartyRockTableAdapter { get set }
     
     func displayMessage(Message : String)
     func showErrorDialog(ErrorMessage : String)
     func showErrorMessage(ErrorMessage : String)
-    func navigateTomain()
+    func navigateToVideo()
     
 }

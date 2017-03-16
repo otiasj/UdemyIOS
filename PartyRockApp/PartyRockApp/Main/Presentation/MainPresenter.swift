@@ -7,8 +7,5 @@
 //
 
 protocol MainPresenter {
-    var mainView: MainView? { get set }
-    //var delegate:Delegate? { get set }
-    
     func load()
 }

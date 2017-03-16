@@ -13,6 +13,6 @@ protocol VideoView {
     func displayMessage(Message : String)
     func showErrorDialog(ErrorMessage : String)
     func showErrorMessage(ErrorMessage : String)
-    func navigateToBack()
+    func navigateBack()
     
 }

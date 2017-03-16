@@ -31,7 +31,7 @@ class VideoPresenterImpl: VideoPresenter
     {
         if let VideoView = VideoView {
             VideoView.displayMessage(Message: "Video loaded")
-            VideoView.navigateToBack()
+            VideoView.navigateBack()
         }
     }
 }

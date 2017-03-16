@@ -8,30 +8,39 @@
 
 class MainPresenterImpl: MainPresenter
 {
-    var mainView: MainView?
-    
     // MARK: lifecycle
-    public init() {
-    }
+    let mainView: MainView
+    let partyRockTableAdapter: PartyRockTableAdapter
     
-    // FIXME: Add some initialization / clean up
+    public init(mainView: MainView, partyRockTableAdapter: PartyRockTableAdapter) {
+        self.mainView = mainView
+        self.partyRockTableAdapter = partyRockTableAdapter
+    }
     
     // MARK: - logic
     
     func load()
     {
         print("Main loading...")
-        //delegate.load()
+        partyRockTableAdapter.partyRocks = fakeLoad()
         onComplete();
     }
     
     // MARK: - load Event handling
-    
     func onComplete()//(model: MainModel)
     {
-        if let mainView = mainView {
-            mainView.displayMessage(Message: "Main loaded")
-            mainView.navigateTomain()
-        }
+        mainView.displayMessage(Message: "Main loaded")
+        mainView.navigateToVideo()
+    }
+    
+    private func fakeLoad() -> [PartyRock] {
+        var partyRocks = [PartyRock]()
+        let partyRock1 = PartyRock(imageUrl: "test1", videoUrl: "1" , videoTitle: "test 1")
+        let partyRock2 = PartyRock(imageUrl: "test2", videoUrl: "2" , videoTitle: "test 2")
+        let partyRock3 = PartyRock(imageUrl: "test3", videoUrl: "3" , videoTitle: "test 3")
+        partyRocks.append(partyRock1)
+        partyRocks.append(partyRock2)
+        partyRocks.append(partyRock3)
+        return partyRocks
     }
 }
