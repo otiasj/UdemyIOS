@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0c-QC-5mz">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <rect key="frame" x="112" y="318" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Q68-pU-hOI"/>
-                                    <constraint firstAttribute="width" constant="46" id="vVy-QF-eu0"/>
+                                    <constraint firstAttribute="width" constant="150" id="vVy-QF-eu0"/>
                                 </constraints>
                                 <state key="normal" title="Load"/>
                                 <connections>

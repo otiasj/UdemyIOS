@@ -9,5 +9,5 @@
 import RxSwift
 
 protocol LoginDelegate {
-    func load() -> Observable<LoginEntity>
+    func login() -> Observable<LoginEntity>
 }

@@ -12,23 +12,21 @@ class LoginPresenterImpl: LoginPresenter
     var disposeBag = DisposeBag()
     var loginView: LoginView
     var loginDelegate: LoginDelegate
-    var backgroundWorkScheduler: ConcurrentDispatchQueueScheduler
     
     // MARK: lifecycle
     public init(loginView: LoginView,
         loginDelegate: LoginDelegate) {
         self.loginView = loginView
         self.loginDelegate = loginDelegate
-        backgroundWorkScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     }
     
     // MARK: - logic
     func load()
     {
         print("Login loading...")
-        loginDelegate.load()
+        loginDelegate.login()
             // Subscribe in background thread
-            .subscribeOn(backgroundWorkScheduler)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             // Observe in main thread
             .observeOn(MainScheduler())
             // Subscribe on observer

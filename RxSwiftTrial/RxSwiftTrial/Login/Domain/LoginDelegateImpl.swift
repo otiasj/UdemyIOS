@@ -6,12 +6,11 @@
 //  Copyright © 2017 otiasj. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 
 class LoginDelegateImpl : LoginDelegate {
     
-    func load() -> Observable<LoginEntity> {
+    func login() -> Observable<LoginEntity> {
         return Observable<LoginEntity>.just(LoginEntity())
     }
 }

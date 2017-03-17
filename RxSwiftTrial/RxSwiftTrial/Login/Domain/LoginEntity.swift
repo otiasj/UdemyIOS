@@ -6,9 +6,6 @@
 //  Copyright © 2017 otiasj. All rights reserved.
 //
 
-import Foundation
-
-
 class LoginEntity {
     var session : String = ""
 }
