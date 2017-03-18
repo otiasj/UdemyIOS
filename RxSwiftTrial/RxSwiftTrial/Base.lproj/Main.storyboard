@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="5Eb-ur-P71">
             <objects>
-                <viewController id="WYe-Yc-OE6" sceneMemberID="viewController">
+                <viewController id="WYe-Yc-OE6" customClass="TestViewController" customModule="RxSwiftTrial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J3T-7u-Bbh"/>
                         <viewControllerLayoutGuide type="bottom" id="sIE-fz-ZCh"/>
@@ -83,13 +83,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-o0-u6H">
+                                <rect key="frame" x="112" y="318" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4uc-ZP-3a4"/>
+                                    <constraint firstAttribute="width" constant="150" id="Q0g-ch-tQk"/>
+                                </constraints>
+                                <state key="normal" title="Load"/>
+                                <connections>
+                                    <action selector="onLoadButtonClicked:" destination="WYe-Yc-OE6" eventType="touchUpInside" id="gBd-yJ-aPV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aT8-o0-u6H" firstAttribute="centerY" secondItem="Crx-bg-x1H" secondAttribute="centerY" id="BRY-Aj-9Fg"/>
                             <constraint firstItem="YH6-eB-mdZ" firstAttribute="centerX" secondItem="Crx-bg-x1H" secondAttribute="centerX" id="HEJ-ls-1wp"/>
                             <constraint firstItem="YH6-eB-mdZ" firstAttribute="top" secondItem="J3T-7u-Bbh" secondAttribute="bottom" constant="8" id="bOg-LC-cH5"/>
+                            <constraint firstItem="aT8-o0-u6H" firstAttribute="centerX" secondItem="Crx-bg-x1H" secondAttribute="centerX" id="z8v-Uw-Fr0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadButton" destination="aT8-o0-u6H" id="PC3-vJ-Bgn"/>
+                        <outlet property="titleLabel" destination="YH6-eB-mdZ" id="cPB-Cm-E4f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfA-MD-GYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
