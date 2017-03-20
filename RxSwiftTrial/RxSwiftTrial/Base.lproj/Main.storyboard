@@ -29,7 +29,7 @@
                                 </constraints>
                                 <state key="normal" title="Load"/>
                                 <connections>
-                                    <action selector="onLoadClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GjP-u7-o9q"/>
+                                    <action selector="LoadClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oxv-i1-XuM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm6-46-rSj">
@@ -52,8 +52,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loadButton" destination="O0c-QC-5mz" id="upi-fX-dSX"/>
-                        <outlet property="titleLabel" destination="Vm6-46-rSj" id="GRH-7y-AdP"/>
+                        <outlet property="loadButton" destination="O0c-QC-5mz" id="Cf9-WP-ML9"/>
+                        <outlet property="titleLabel" destination="Vm6-46-rSj" id="kD1-nF-fR2"/>
                         <segue destination="WYe-Yc-OE6" kind="show" identifier="Main" id="OFO-Of-ugT"/>
                     </connections>
                 </viewController>
@@ -91,7 +91,7 @@
                                 </constraints>
                                 <state key="normal" title="Load"/>
                                 <connections>
-                                    <action selector="onLoadButtonClicked:" destination="WYe-Yc-OE6" eventType="touchUpInside" id="gBd-yJ-aPV"/>
+                                    <action selector="LoadClicked:" destination="WYe-Yc-OE6" eventType="touchUpInside" id="jOG-VE-uX0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,8 +104,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loadButton" destination="aT8-o0-u6H" id="PC3-vJ-Bgn"/>
-                        <outlet property="titleLabel" destination="YH6-eB-mdZ" id="cPB-Cm-E4f"/>
+                        <outlet property="loadButton" destination="aT8-o0-u6H" id="RkZ-Zf-5Co"/>
+                        <outlet property="titleLabel" destination="YH6-eB-mdZ" id="Ygx-ZS-VoM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfA-MD-GYI" userLabel="First Responder" sceneMemberID="firstResponder"/>

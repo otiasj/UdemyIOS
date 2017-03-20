@@ -2,7 +2,9 @@
 //  TestDelegate.swift
 //  RxSwiftTrial
 //
-//  Created by Julien Saito on 3/17/17.
+//  The delegate is in charge of loading data using ApiServices
+//
+//  Created by Julien Saito on 3/20/17.
 //  Copyright (c) 2017 otiasj. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  TestDelegateImpl.swift
 //  RxSwiftTrial
 //
-//  Created by Julien Saito on 3/17/17.
+//  Created by Julien Saito on 3/20/17.
 //  Copyright (c) 2017 otiasj. All rights reserved.
 //
 
@@ -20,7 +20,6 @@ class TestDelegateImpl : TestDelegate {
          testNetworkApiService: TestNetworkApiService) {
         self.testCacheApiService = testCacheApiService
         self.testNetworkApiService = testNetworkApiService
-        
     }
     
     // MARK: - logic
@@ -34,7 +33,7 @@ class TestDelegateImpl : TestDelegate {
             Observable<TestEntity>
                 .concat(cacheObservable, networkObservable) // try first on cache, then network
                 .take(1) // take the first non empty event (first does not exist in rxswift?!)
-                .map { entity in return TestModel(from: entity) } // create a new Model wrapping the received entity
+                .map { entity in return TestModel(from: entity) } // create a Model wrapping the received entity
                 .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)) // Subscribe works in background thread
                 .observeOn(MainScheduler()) // Observe result in main thread
                 .subscribe(subject!.asObserver()) // will report the results to the replay subject observer

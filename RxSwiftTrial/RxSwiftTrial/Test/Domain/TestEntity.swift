@@ -4,7 +4,7 @@
 //
 //  This class holds the data loaded from the services
 //
-//  Created by Julien Saito on 3/17/17.
+//  Created by Julien Saito on 3/20/17.
 //  Copyright (c) 2017 otiasj. All rights reserved.
 //
 

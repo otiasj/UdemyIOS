@@ -1,5 +1,5 @@
 //
-//  LoginPresenterTest.swift
+//  TestPresenterTest.swift
 //  RxSwiftTrial
 //
 //  Created by Julien Saito on 3/20/17.
@@ -12,14 +12,14 @@ import RxTest
 @testable import RxSwiftTrial
 
 //Testing the presenter interactions with the view and the delegate
-class LoginPresenterTest: XCTestCase {
+class TestPresenterTest: XCTestCase {
     
-    class MockLoginDelegate : LoginDelegate {
+    class MockTestDelegate : TestDelegate {
         var loadCallCount = 0
-        var mockValue = LoginModel(from: LoginEntity(loadedFrom: "mock value"))
-        var mockObserver: AnyObserver<LoginModel>?
+        var mockValue = TestModel(from: TestEntity(loadedFrom: "mock value"))
+        var mockObserver: AnyObserver<TestModel>?
         
-        func load(params: NSDictionary) -> Observable<LoginModel> {
+        func load(params: NSDictionary) -> Observable<TestModel> {
             return Observable.create { observer in
                 self.loadCallCount += 1
                 self.mockObserver = observer
@@ -43,12 +43,12 @@ class LoginPresenterTest: XCTestCase {
         }
     }
     
-    class MockLoginView : LoginView {
-        var loginPresenter: LoginPresenter?
+    class MockTestView : TestView {
+        var testPresenter: TestPresenter?
         var displayMessageCallCount = 0
         var showErrorDialogCallCount = 0
         var showErrorMessageCallCount = 0
-        var navigateTo___VARIABLE_SegueTargetName___CallCount = 0
+        var navigateToLoginCallCount = 0
         var showLoadingCallCount = 0
         var hideLoadingCallCount = 0
         
@@ -64,8 +64,8 @@ class LoginPresenterTest: XCTestCase {
             showErrorMessageCallCount += 1
         }
         
-        func navigateTo___VARIABLE_SegueTargetName___() {
-            navigateTo___VARIABLE_SegueTargetName___CallCount += 1
+        func navigateToLogin() {
+            navigateToLoginCallCount += 1
         }
         
         func showLoading() {
@@ -77,15 +77,15 @@ class LoginPresenterTest: XCTestCase {
         }
     }
     
-    var mockLoginView : MockLoginView?
-    var mockLoginDelegate : MockLoginDelegate?
-    var mockLoginPresenter : LoginPresenterImpl?
+    var mockTestView : MockTestView?
+    var mockTestDelegate : MockTestDelegate?
+    var mockTestPresenter : TestPresenterImpl?
     
     override func setUp() {
         super.setUp()
-        mockLoginView = MockLoginView()
-        mockLoginDelegate = MockLoginDelegate()
-        mockLoginPresenter = LoginPresenterImpl(loginView: mockLoginView!, loginDelegate: mockLoginDelegate!)
+        mockTestView = MockTestView()
+        mockTestDelegate = MockTestDelegate()
+        mockTestPresenter = TestPresenterImpl(testView: mockTestView!, testDelegate: mockTestDelegate!)
     }
     
     override func tearDown() {
@@ -94,69 +94,69 @@ class LoginPresenterTest: XCTestCase {
     
     //check that calling load will trigger the delegate successfully
     func testLoadCallsDelegate() {
-        mockLoginPresenter!.load()
+        mockTestPresenter!.load()
         
-        XCTAssert(mockLoginDelegate?.loadCallCount == 1)
+        XCTAssert(mockTestDelegate?.loadCallCount == 1)
     }
     
     //Check that calling load with success will generate the proper view calls
     func testLoadSuccess() {
-        mockLoginPresenter!.load()
+        mockTestPresenter!.load()
       
         //the view shows the loading
-        XCTAssert(mockLoginView!.showLoadingCallCount == 1)
-        XCTAssert(mockLoginView!.hideLoadingCallCount == 0)
+        XCTAssert(mockTestView!.showLoadingCallCount == 1)
+        XCTAssert(mockTestView!.hideLoadingCallCount == 0)
         
         //Trigger the delegate callback
-        mockLoginDelegate!.triggerOnNext()
+        mockTestDelegate!.triggerOnNext()
         
         //Verify the results
-        XCTAssert(mockLoginView!.hideLoadingCallCount == 1)
-        XCTAssert(mockLoginView!.displayMessageCallCount == 1)
-        XCTAssert(mockLoginView!.navigateTo___VARIABLE_SegueTargetName___CallCount == 1)
-        XCTAssert(mockLoginView!.showErrorMessageCallCount == 0)
-        XCTAssert(mockLoginView!.showErrorDialogCallCount == 0)
+        XCTAssert(mockTestView!.hideLoadingCallCount == 1)
+        XCTAssert(mockTestView!.displayMessageCallCount == 1)
+        XCTAssert(mockTestView!.navigateToLoginCallCount == 1)
+        XCTAssert(mockTestView!.showErrorMessageCallCount == 0)
+        XCTAssert(mockTestView!.showErrorDialogCallCount == 0)
     }
     
     //Check that calling load with an error will generate the proper view error calls
     func testLoadError() {
-        mockLoginPresenter!.load()
+        mockTestPresenter!.load()
         
         //the view shows the loading
-        XCTAssert(mockLoginView!.showLoadingCallCount == 1)
-        XCTAssert(mockLoginView!.hideLoadingCallCount == 0)
+        XCTAssert(mockTestView!.showLoadingCallCount == 1)
+        XCTAssert(mockTestView!.hideLoadingCallCount == 0)
         
         //Trigger the delegate callback
-        mockLoginDelegate!.triggerOnError()
+        mockTestDelegate!.triggerOnError()
         
         //Verify the results
-        XCTAssert(mockLoginView!.hideLoadingCallCount == 1)
-        XCTAssert(mockLoginView!.displayMessageCallCount == 0)
-        XCTAssert(mockLoginView!.navigateTo___VARIABLE_SegueTargetName___CallCount == 0)
-        XCTAssert(mockLoginView!.showErrorMessageCallCount == 0)
-        XCTAssert(mockLoginView!.showErrorDialogCallCount == 1)
+        XCTAssert(mockTestView!.hideLoadingCallCount == 1)
+        XCTAssert(mockTestView!.displayMessageCallCount == 0)
+        XCTAssert(mockTestView!.navigateToLoginCallCount == 0)
+        XCTAssert(mockTestView!.showErrorMessageCallCount == 0)
+        XCTAssert(mockTestView!.showErrorDialogCallCount == 1)
 
     }
     
     //Check that calling load twice will not trigger several loading calls
     func testLoadAlreadyLoadingError() {
-        mockLoginPresenter!.load()
-        mockLoginPresenter!.load()
+        mockTestPresenter!.load()
+        mockTestPresenter!.load()
         
         //the view shows the loading
-        XCTAssert(mockLoginView!.showLoadingCallCount == 1)
-        XCTAssert(mockLoginView!.hideLoadingCallCount == 0)
-        XCTAssert(mockLoginView!.showErrorMessageCallCount == 1)
+        XCTAssert(mockTestView!.showLoadingCallCount == 1)
+        XCTAssert(mockTestView!.hideLoadingCallCount == 0)
+        XCTAssert(mockTestView!.showErrorMessageCallCount == 1)
         
         //Trigger the delegate callback
-        mockLoginDelegate!.triggerOnNext()
+        mockTestDelegate!.triggerOnNext()
         
         //Verify the results
-        XCTAssert(mockLoginView!.hideLoadingCallCount == 1)
-        XCTAssert(mockLoginView!.displayMessageCallCount == 1)
-        XCTAssert(mockLoginView!.navigateTo___VARIABLE_SegueTargetName___CallCount == 1)
-        XCTAssert(mockLoginView!.showErrorMessageCallCount == 1)
-        XCTAssert(mockLoginView!.showErrorDialogCallCount == 0)
+        XCTAssert(mockTestView!.hideLoadingCallCount == 1)
+        XCTAssert(mockTestView!.displayMessageCallCount == 1)
+        XCTAssert(mockTestView!.navigateToLoginCallCount == 1)
+        XCTAssert(mockTestView!.showErrorMessageCallCount == 1)
+        XCTAssert(mockTestView!.showErrorDialogCallCount == 0)
     }
     
 }

@@ -2,7 +2,9 @@
 //  TestViewController.swift
 //  RxSwiftTrial
 //
-//  Created by Julien Saito on 3/17/17.
+//  Link your storyboard to this viewController
+//
+//  Created by Julien Saito on 3/20/17.
 //  Copyright (c) 2017 otiasj. All rights reserved.
 //
 
@@ -31,10 +33,11 @@ class TestViewController: UIViewController, TestView
     @IBOutlet weak var loadButton: UIButton!
     
     // MARK: - @IBOutlet @IBAction
-    @IBAction func onLoadButtonClicked(_ sender: Any) {
+    @IBAction func LoadClicked(_ sender: Any) {
         if let testPresenter = testPresenter {
             testPresenter.load()
         }
+
     }
     
     // MARK: - Display logic
@@ -55,5 +58,12 @@ class TestViewController: UIViewController, TestView
         //performSegue(withIdentifier: "Login", sender: self)
         dismiss(animated: true, completion: nil)
     }
+    
+    func showLoading() {
+        print("Something is loading, show the spinner")
+    }
 
+    func hideLoading() {
+        print("Something finished loading, hide the spinner")
+    }
 }

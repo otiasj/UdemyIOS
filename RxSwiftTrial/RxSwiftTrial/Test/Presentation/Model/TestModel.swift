@@ -4,7 +4,7 @@
 //
 //  This class wraps the data loaded from the services, and provides presentation related data manipulation.
 //
-//  Created by Julien Saito on 3/17/17.
+//  Created by Julien Saito on 3/20/17.
 //  Copyright (c) 2017 otiasj. All rights reserved.
 //
 

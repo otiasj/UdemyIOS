@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, LoginView
     @IBOutlet weak var loadButton: UIButton!
     
     // MARK: - @IBOutlet @IBAction
-    @IBAction func onLoadClick(_ sender: Any) {
+    @IBAction func LoadClicked(_ sender: Any) {
         if let loginPresenter = loginPresenter {
             loginPresenter.load()
         }

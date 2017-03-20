@@ -37,21 +37,21 @@
 		F925D2B21E7C5C4000BF521E /* ___FILEBASENAME___DelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2B11E7C5C4000BF521E /* ___FILEBASENAME___DelegateImpl.swift */; };
 		F925D2B41E7C5D3F00BF521E /* ___FILEBASENAME___Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2B31E7C5D3F00BF521E /* ___FILEBASENAME___Model.swift */; };
 		F925D2DD1E7C8E7300BF521E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2DB1E7C8E7300BF521E /* ApiService.swift */; };
-		F925D2F31E7CE6FA00BF521E /* TestCacheApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2E21E7CE6FA00BF521E /* TestCacheApiService.swift */; };
-		F925D2F41E7CE6FA00BF521E /* TestNetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2E31E7CE6FA00BF521E /* TestNetworkApiService.swift */; };
-		F925D2F51E7CE6FA00BF521E /* TestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2E51E7CE6FA00BF521E /* TestDelegate.swift */; };
-		F925D2F61E7CE6FA00BF521E /* TestDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2E61E7CE6FA00BF521E /* TestDelegateImpl.swift */; };
-		F925D2F71E7CE6FA00BF521E /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2E71E7CE6FA00BF521E /* TestEntity.swift */; };
-		F925D2F81E7CE6FA00BF521E /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2EA1E7CE6FA00BF521E /* TestModel.swift */; };
-		F925D2F91E7CE6FA00BF521E /* TestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2EC1E7CE6FA00BF521E /* TestPresenter.swift */; };
-		F925D2FA1E7CE6FA00BF521E /* TestPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2ED1E7CE6FA00BF521E /* TestPresenterImpl.swift */; };
-		F925D2FB1E7CE6FA00BF521E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2EF1E7CE6FA00BF521E /* TestView.swift */; };
-		F925D2FC1E7CE6FA00BF521E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2F01E7CE6FA00BF521E /* TestViewController.swift */; };
-		F925D2FD1E7CE6FA00BF521E /* TestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2F11E7CE6FA00BF521E /* TestComponent.swift */; };
-		F925D2FE1E7CE6FA00BF521E /* TestModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2F21E7CE6FA00BF521E /* TestModule.swift */; };
 		F925D3011E7CE8CB00BF521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F925D2FF1E7CE8CB00BF521E /* Main.storyboard */; };
-		F967AAFD1E8057AA00E16E0B /* ___FILEBASENAME___PresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AAFC1E8057AA00E16E0B /* ___FILEBASENAME___PresenterTest.swift */; };
-		F967AB0D1E808AFD00E16E0B /* LoginPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB0C1E808AFD00E16E0B /* LoginPresenterTest.swift */; };
+		F9592C921E8094DB007D0AEF /* ___FILEBASENAME___PresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9592C911E8094DB007D0AEF /* ___FILEBASENAME___PresenterTest.swift */; };
+		F967AB491E8090AB00E16E0B /* TestCacheApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB381E8090AB00E16E0B /* TestCacheApiService.swift */; };
+		F967AB4A1E8090AB00E16E0B /* TestNetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB391E8090AB00E16E0B /* TestNetworkApiService.swift */; };
+		F967AB4B1E8090AB00E16E0B /* TestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB3B1E8090AB00E16E0B /* TestDelegate.swift */; };
+		F967AB4C1E8090AB00E16E0B /* TestDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB3C1E8090AB00E16E0B /* TestDelegateImpl.swift */; };
+		F967AB4D1E8090AB00E16E0B /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB3D1E8090AB00E16E0B /* TestEntity.swift */; };
+		F967AB4E1E8090AB00E16E0B /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB401E8090AB00E16E0B /* TestModel.swift */; };
+		F967AB4F1E8090AB00E16E0B /* TestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB421E8090AB00E16E0B /* TestPresenter.swift */; };
+		F967AB501E8090AB00E16E0B /* TestPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB431E8090AB00E16E0B /* TestPresenterImpl.swift */; };
+		F967AB511E8090AB00E16E0B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB451E8090AB00E16E0B /* TestView.swift */; };
+		F967AB521E8090AB00E16E0B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB461E8090AB00E16E0B /* TestViewController.swift */; };
+		F967AB531E8090AB00E16E0B /* TestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB471E8090AB00E16E0B /* TestComponent.swift */; };
+		F967AB541E8090AB00E16E0B /* TestModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB481E8090AB00E16E0B /* TestModule.swift */; };
+		F967AB561E80940400E16E0B /* PresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB551E80940400E16E0B /* PresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,21 +112,21 @@
 		F925D2B11E7C5C4000BF521E /* ___FILEBASENAME___DelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___DelegateImpl.swift"; sourceTree = "<group>"; };
 		F925D2B31E7C5D3F00BF521E /* ___FILEBASENAME___Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___Model.swift"; sourceTree = "<group>"; };
 		F925D2DB1E7C8E7300BF521E /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Login/ApiService.swift; sourceTree = "<group>"; };
-		F925D2E21E7CE6FA00BF521E /* TestCacheApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCacheApiService.swift; sourceTree = "<group>"; };
-		F925D2E31E7CE6FA00BF521E /* TestNetworkApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNetworkApiService.swift; sourceTree = "<group>"; };
-		F925D2E51E7CE6FA00BF521E /* TestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDelegate.swift; sourceTree = "<group>"; };
-		F925D2E61E7CE6FA00BF521E /* TestDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDelegateImpl.swift; sourceTree = "<group>"; };
-		F925D2E71E7CE6FA00BF521E /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
-		F925D2EA1E7CE6FA00BF521E /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
-		F925D2EC1E7CE6FA00BF521E /* TestPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPresenter.swift; sourceTree = "<group>"; };
-		F925D2ED1E7CE6FA00BF521E /* TestPresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPresenterImpl.swift; sourceTree = "<group>"; };
-		F925D2EF1E7CE6FA00BF521E /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		F925D2F01E7CE6FA00BF521E /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		F925D2F11E7CE6FA00BF521E /* TestComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestComponent.swift; sourceTree = "<group>"; };
-		F925D2F21E7CE6FA00BF521E /* TestModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModule.swift; sourceTree = "<group>"; };
 		F925D3001E7CE8CB00BF521E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F967AAFC1E8057AA00E16E0B /* ___FILEBASENAME___PresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___PresenterTest.swift"; sourceTree = "<group>"; };
-		F967AB0C1E808AFD00E16E0B /* LoginPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterTest.swift; sourceTree = "<group>"; };
+		F9592C911E8094DB007D0AEF /* ___FILEBASENAME___PresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "___FILEBASENAME___PresenterTest.swift"; path = "../../../../Library/Developer/Xcode/Templates/Custom Xcode Templates/Mewe Feature tests.xctemplate/___FILEBASENAME___/Presentation/Presenter/___FILEBASENAME___PresenterTest.swift"; sourceTree = "<group>"; };
+		F967AB381E8090AB00E16E0B /* TestCacheApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCacheApiService.swift; sourceTree = "<group>"; };
+		F967AB391E8090AB00E16E0B /* TestNetworkApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNetworkApiService.swift; sourceTree = "<group>"; };
+		F967AB3B1E8090AB00E16E0B /* TestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDelegate.swift; sourceTree = "<group>"; };
+		F967AB3C1E8090AB00E16E0B /* TestDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDelegateImpl.swift; sourceTree = "<group>"; };
+		F967AB3D1E8090AB00E16E0B /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
+		F967AB401E8090AB00E16E0B /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		F967AB421E8090AB00E16E0B /* TestPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPresenter.swift; sourceTree = "<group>"; };
+		F967AB431E8090AB00E16E0B /* TestPresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPresenterImpl.swift; sourceTree = "<group>"; };
+		F967AB451E8090AB00E16E0B /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		F967AB461E8090AB00E16E0B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		F967AB471E8090AB00E16E0B /* TestComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestComponent.swift; sourceTree = "<group>"; };
+		F967AB481E8090AB00E16E0B /* TestModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModule.swift; sourceTree = "<group>"; };
+		F967AB551E80940400E16E0B /* PresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresenterTest.swift; path = Test/Presentation/Presenter/PresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +201,7 @@
 		F925D2331E7B3B0700BF521E /* RxSwiftTrial */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2E01E7CE6FA00BF521E /* Test */,
+				F967AB361E8090AB00E16E0B /* Test */,
 				F925D2961E7C5B0900BF521E /* ___FILEBASENAME___ */,
 				F925D2681E7B42B600BF521E /* Login */,
 				F925D2DB1E7C8E7300BF521E /* ApiService.swift */,
@@ -218,8 +218,8 @@
 		F925D2481E7B3B0700BF521E /* RxSwiftTrialTests */ = {
 			isa = PBXGroup;
 			children = (
-				F967AB071E808AFD00E16E0B /* Login */,
-				F967AAFC1E8057AA00E16E0B /* ___FILEBASENAME___PresenterTest.swift */,
+				F9592C911E8094DB007D0AEF /* ___FILEBASENAME___PresenterTest.swift */,
+				F967AB551E80940400E16E0B /* PresenterTest.swift */,
 				F925D2491E7B3B0700BF521E /* RxSwiftTrialTests.swift */,
 				F925D24B1E7B3B0700BF521E /* Info.plist */,
 			);
@@ -367,111 +367,71 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F925D2E01E7CE6FA00BF521E /* Test */ = {
+		F967AB361E8090AB00E16E0B /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2E11E7CE6FA00BF521E /* Data */,
-				F925D2E41E7CE6FA00BF521E /* Domain */,
-				F925D2E81E7CE6FA00BF521E /* Presentation */,
-				F925D2F11E7CE6FA00BF521E /* TestComponent.swift */,
-				F925D2F21E7CE6FA00BF521E /* TestModule.swift */,
+				F967AB371E8090AB00E16E0B /* Data */,
+				F967AB3A1E8090AB00E16E0B /* Domain */,
+				F967AB3E1E8090AB00E16E0B /* Presentation */,
+				F967AB471E8090AB00E16E0B /* TestComponent.swift */,
+				F967AB481E8090AB00E16E0B /* TestModule.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
 		};
-		F925D2E11E7CE6FA00BF521E /* Data */ = {
+		F967AB371E8090AB00E16E0B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2E21E7CE6FA00BF521E /* TestCacheApiService.swift */,
-				F925D2E31E7CE6FA00BF521E /* TestNetworkApiService.swift */,
+				F967AB381E8090AB00E16E0B /* TestCacheApiService.swift */,
+				F967AB391E8090AB00E16E0B /* TestNetworkApiService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		F925D2E41E7CE6FA00BF521E /* Domain */ = {
+		F967AB3A1E8090AB00E16E0B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2E51E7CE6FA00BF521E /* TestDelegate.swift */,
-				F925D2E61E7CE6FA00BF521E /* TestDelegateImpl.swift */,
-				F925D2E71E7CE6FA00BF521E /* TestEntity.swift */,
+				F967AB3B1E8090AB00E16E0B /* TestDelegate.swift */,
+				F967AB3C1E8090AB00E16E0B /* TestDelegateImpl.swift */,
+				F967AB3D1E8090AB00E16E0B /* TestEntity.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		F925D2E81E7CE6FA00BF521E /* Presentation */ = {
+		F967AB3E1E8090AB00E16E0B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2E91E7CE6FA00BF521E /* Model */,
-				F925D2EB1E7CE6FA00BF521E /* Presenter */,
-				F925D2EE1E7CE6FA00BF521E /* View */,
+				F967AB3F1E8090AB00E16E0B /* Model */,
+				F967AB411E8090AB00E16E0B /* Presenter */,
+				F967AB441E8090AB00E16E0B /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		F925D2E91E7CE6FA00BF521E /* Model */ = {
+		F967AB3F1E8090AB00E16E0B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2EA1E7CE6FA00BF521E /* TestModel.swift */,
+				F967AB401E8090AB00E16E0B /* TestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F925D2EB1E7CE6FA00BF521E /* Presenter */ = {
+		F967AB411E8090AB00E16E0B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2EC1E7CE6FA00BF521E /* TestPresenter.swift */,
-				F925D2ED1E7CE6FA00BF521E /* TestPresenterImpl.swift */,
+				F967AB421E8090AB00E16E0B /* TestPresenter.swift */,
+				F967AB431E8090AB00E16E0B /* TestPresenterImpl.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		F925D2EE1E7CE6FA00BF521E /* View */ = {
+		F967AB441E8090AB00E16E0B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F925D2EF1E7CE6FA00BF521E /* TestView.swift */,
-				F925D2F01E7CE6FA00BF521E /* TestViewController.swift */,
+				F967AB451E8090AB00E16E0B /* TestView.swift */,
+				F967AB461E8090AB00E16E0B /* TestViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F967AB071E808AFD00E16E0B /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				F967AB081E808AFD00E16E0B /* Data */,
-				F967AB091E808AFD00E16E0B /* Domain */,
-				F967AB0A1E808AFD00E16E0B /* Presentation */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		F967AB081E808AFD00E16E0B /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		F967AB091E808AFD00E16E0B /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		F967AB0A1E808AFD00E16E0B /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				F967AB0B1E808AFD00E16E0B /* Presenter */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		F967AB0B1E808AFD00E16E0B /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				F967AB0C1E808AFD00E16E0B /* LoginPresenterTest.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -709,40 +669,40 @@
 			files = (
 				F925D2A81E7C5B0900BF521E /* ___FILEBASENAME___PresenterImpl.swift in Sources */,
 				F925D27C1E7B42B600BF521E /* LoginViewController.swift in Sources */,
-				F925D2FC1E7CE6FA00BF521E /* TestViewController.swift in Sources */,
+				F967AB521E8090AB00E16E0B /* TestViewController.swift in Sources */,
 				F925D2B01E7C5C3500BF521E /* ___FILEBASENAME___Entity.swift in Sources */,
 				F925D2791E7B42B600BF521E /* LoginPresenter.swift in Sources */,
 				F925D2B21E7C5C4000BF521E /* ___FILEBASENAME___DelegateImpl.swift in Sources */,
 				F925D2371E7B3B0700BF521E /* ViewController.swift in Sources */,
-				F925D2F61E7CE6FA00BF521E /* TestDelegateImpl.swift in Sources */,
+				F967AB4C1E8090AB00E16E0B /* TestDelegateImpl.swift in Sources */,
 				F925D2A51E7C5B0900BF521E /* ___FILEBASENAME___Module.swift in Sources */,
 				F925D2B41E7C5D3F00BF521E /* ___FILEBASENAME___Model.swift in Sources */,
 				F925D2A61E7C5B0900BF521E /* ___FILEBASENAME___Delegate.swift in Sources */,
 				F925D2A41E7C5B0900BF521E /* ___FILEBASENAME___Component.swift in Sources */,
 				F925D2A91E7C5B0900BF521E /* ___FILEBASENAME___View.swift in Sources */,
-				F925D2FE1E7CE6FA00BF521E /* TestModule.swift in Sources */,
+				F967AB541E8090AB00E16E0B /* TestModule.swift in Sources */,
 				F925D2761E7B42B600BF521E /* LoginDelegate.swift in Sources */,
 				F925D27E1E7B47E500BF521E /* LoginDelegateImpl.swift in Sources */,
 				F925D27A1E7B42B600BF521E /* LoginPresenterImpl.swift in Sources */,
 				F925D2351E7B3B0700BF521E /* AppDelegate.swift in Sources */,
 				F925D2DD1E7C8E7300BF521E /* ApiService.swift in Sources */,
 				F925D2781E7B42B600BF521E /* LoginModule.swift in Sources */,
-				F925D2F41E7CE6FA00BF521E /* TestNetworkApiService.swift in Sources */,
+				F967AB4A1E8090AB00E16E0B /* TestNetworkApiService.swift in Sources */,
 				F925D27B1E7B42B600BF521E /* LoginView.swift in Sources */,
-				F925D2F31E7CE6FA00BF521E /* TestCacheApiService.swift in Sources */,
+				F967AB491E8090AB00E16E0B /* TestCacheApiService.swift in Sources */,
 				F925D2AA1E7C5B0900BF521E /* ___FILEBASENAME___ViewController.swift in Sources */,
 				F925D2AE1E7C5B6900BF521E /* ___FILEBASENAME___NetworkApiService.swift in Sources */,
 				F925D2771E7B42B600BF521E /* LoginComponent.swift in Sources */,
-				F925D2FD1E7CE6FA00BF521E /* TestComponent.swift in Sources */,
-				F925D2FB1E7CE6FA00BF521E /* TestView.swift in Sources */,
-				F925D2F71E7CE6FA00BF521E /* TestEntity.swift in Sources */,
+				F967AB531E8090AB00E16E0B /* TestComponent.swift in Sources */,
+				F967AB511E8090AB00E16E0B /* TestView.swift in Sources */,
+				F967AB4D1E8090AB00E16E0B /* TestEntity.swift in Sources */,
 				F925D2A71E7C5B0900BF521E /* ___FILEBASENAME___Presenter.swift in Sources */,
 				F925D2AC1E7C5B4800BF521E /* ___FILEBASENAME___CacheApiService.swift in Sources */,
-				F925D2F91E7CE6FA00BF521E /* TestPresenter.swift in Sources */,
-				F925D2FA1E7CE6FA00BF521E /* TestPresenterImpl.swift in Sources */,
-				F925D2F81E7CE6FA00BF521E /* TestModel.swift in Sources */,
+				F967AB4F1E8090AB00E16E0B /* TestPresenter.swift in Sources */,
+				F967AB501E8090AB00E16E0B /* TestPresenterImpl.swift in Sources */,
+				F967AB4E1E8090AB00E16E0B /* TestModel.swift in Sources */,
 				F925D2801E7B482100BF521E /* LoginEntity.swift in Sources */,
-				F925D2F51E7CE6FA00BF521E /* TestDelegate.swift in Sources */,
+				F967AB4B1E8090AB00E16E0B /* TestDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,9 +710,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F967AAFD1E8057AA00E16E0B /* ___FILEBASENAME___PresenterTest.swift in Sources */,
-				F967AB0D1E808AFD00E16E0B /* LoginPresenterTest.swift in Sources */,
 				F925D24A1E7B3B0700BF521E /* RxSwiftTrialTests.swift in Sources */,
+				F9592C921E8094DB007D0AEF /* ___FILEBASENAME___PresenterTest.swift in Sources */,
+				F967AB561E80940400E16E0B /* PresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

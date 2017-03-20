@@ -2,7 +2,7 @@
 //  TestView.swift
 //  RxSwiftTrial
 //
-//  Created by Julien Saito on 3/17/17.
+//  Created by Julien Saito on 3/20/17.
 //  Copyright (c) 2017 otiasj. All rights reserved.
 //
 //
@@ -14,5 +14,6 @@ protocol TestView {
     func showErrorDialog(ErrorMessage : String)
     func showErrorMessage(ErrorMessage : String)
     func navigateToLogin()
-    
+    func showLoading()
+    func hideLoading()
 }
