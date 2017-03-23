@@ -34,8 +34,7 @@ class TestDelegateImpl : TestDelegate {
                 .concat(cacheObservable, networkObservable) // try first on cache, then network
                 .take(1) // take the first non empty event (first does not exist in rxswift?!)
                 .map { entity in return TestModel(from: entity) } // create a Model wrapping the received entity
-                .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)) // Subscribe works in background thread
-                .observeOn(MainScheduler()) // Observe result in main thread
+                .composeIoToMainThreads()
                 .subscribe(subject!.asObserver()) // will report the results to the replay subject observer
                 .addDisposableTo(disposeBag) // clean up after execution
         }

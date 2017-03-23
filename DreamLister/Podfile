@@ -1,0 +1,13 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'DreamLister' do
+
+	pod "RxSwift"
+
+end
+
+target 'DreamListerTests' do
+    pod 'RxBlocking', '~> 3.0'
+    pod 'RxTest',     '~> 3.0'
+end
