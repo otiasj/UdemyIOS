@@ -15,14 +15,14 @@ class MainModule {
     private let itemTableViewAdapter: ItemTableViewAdapter;
     private let mainPresenter: MainPresenter
     private let mainDelegate: MainDelegate
-    private let mainCoreDataService: MainCoreDataService
+    private let itemCoreDataService: ItemCoreDataService
     
     //Be careful in the order of the creation of instances
     init(mainView: MainView) {
         self.mainView = mainView
         self.itemTableViewAdapter = ItemTableViewAdapter()
-        self.mainCoreDataService = MainCoreDataService(onDataUpdateListener: itemTableViewAdapter)
-        self.mainDelegate = MainDelegateImpl(mainCoreDataService: mainCoreDataService)
+        self.itemCoreDataService = ItemCoreDataService(onDataUpdateListener: itemTableViewAdapter)
+        self.mainDelegate = MainDelegateImpl(itemCoreDataService: itemCoreDataService)
         self.mainPresenter = MainPresenterImpl(mainView: mainView, mainDelegate: mainDelegate, itemTableViewAdapter: itemTableViewAdapter)
     }
     

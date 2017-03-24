@@ -17,8 +17,14 @@ class DetailsViewController: UIViewController, DetailsView
     let detailsComponent = DetailsComponent()
     // MARK: - Injected
     var detailsPresenter: DetailsPresenter?
+    var storePickerAdapter: StorePickerAdapter?
 
     // MARK: - @IBOutlet
+    @IBOutlet weak var storePicker: UIPickerView!
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var priceField: UITextField!
+    @IBOutlet weak var detailsField: UITextField!
+    
     
     // MARK: - View lifecycle
     override func viewDidLoad()
@@ -29,9 +35,20 @@ class DetailsViewController: UIViewController, DetailsView
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         }
+        
+        storePickerAdapter?.setPickerView(pickerView: storePicker)
+        
+        //createFakeData()
+        detailsPresenter?.loadStores()
     }
 
     // MARK: - @IBOutlet @IBAction
+    @IBAction func savePressed(_ sender: Any) {
+        detailsPresenter?.createItem(title: titleField.text,
+                                     price: priceField.text,
+                                     details: detailsField.text,
+                                     store: storePickerAdapter?.getSelectedStore())
+    }
     
     // MARK: - Display logic
     func displayMessage(Message : String) {
@@ -48,8 +65,7 @@ class DetailsViewController: UIViewController, DetailsView
     
     func navigateToMain() {
         print("Navigating to Main")
-        performSegue(withIdentifier: "Main", sender: self)
-        
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func showLoading() {
@@ -58,5 +74,24 @@ class DetailsViewController: UIViewController, DetailsView
 
     func hideLoading() {
         print("Something finished loading, hide the spinner")
+    }
+    
+    private func createFakeData() {
+        let store = Store(context: context)
+        store.name = "Best Buy"
+        
+        let store2 = Store(context: context)
+        store2.name = "Frys Electronics"
+        
+        let store3 = Store(context: context)
+        store3.name = "Amazon"
+        
+        let store4 = Store(context: context)
+        store4.name = "Tesla Dealership"
+        
+        let store5 = Store(context: context)
+        store5.name = "K Mart"
+        
+        //appDelegate.saveContext()
     }
 }

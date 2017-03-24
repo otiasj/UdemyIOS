@@ -23,7 +23,7 @@ class MainPresenterImpl: MainPresenter
         self.mainView = mainView
         self.mainDelegate = mainDelegate
         self.itemTableViewAdapter = itemTableViewAdapter
-        createFakeData()
+        //createFakeData()
     }
     
     // MARK: - main presenter logic

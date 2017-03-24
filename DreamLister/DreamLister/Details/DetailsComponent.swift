@@ -17,6 +17,7 @@ class DetailsComponent {
         DetailsComponent.detailsModule = DetailsModule(detailsView: detailsView)
         if let detailsModule = DetailsComponent.detailsModule {
             detailsView.detailsPresenter = detailsModule.provideDetailsPresenter()
+            detailsView.storePickerAdapter = detailsModule.provideStorePickerAdapter()
         }
     }
 }

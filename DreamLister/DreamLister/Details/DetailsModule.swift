@@ -14,28 +14,22 @@ class DetailsModule {
     private let detailsView: DetailsView
     private let detailsPresenter: DetailsPresenter
     private let detailsDelegate: DetailsDelegate
+    private let storePickerAdapter: StorePickerAdapter
     
     //Be careful in the order of the creation of instances
     init(detailsView: DetailsView) {
         self.detailsView = detailsView
-        self.detailsDelegate = DetailsModule.provideDetailsDelegate()
-        self.detailsPresenter = DetailsPresenterImpl(detailsView: detailsView, detailsDelegate: detailsDelegate)
+        self.storePickerAdapter = StorePickerAdapter()
+        self.detailsDelegate = DetailsDelegateImpl(storeCoreDataService: StoreCoreDataService(), itemCoreDataService : ItemCoreDataService())
+        self.detailsPresenter = DetailsPresenterImpl(detailsView: detailsView, detailsDelegate: detailsDelegate, storePickerAdapter: storePickerAdapter)
+        
     }
     
     func provideDetailsPresenter() -> DetailsPresenter {
        return detailsPresenter
     }
     
-    internal static func provideDetailsDelegate() -> DetailsDelegateImpl {
-        return DetailsDelegateImpl(detailsCacheApiService: provideDetailsCacheApiService(), detailsNetworkApiService: provideDetailsNetworkApiService())
+    func provideStorePickerAdapter() -> StorePickerAdapter {
+        return storePickerAdapter
     }
-    
-    internal static func provideDetailsCacheApiService() -> DetailsCacheApiService {
-        return DetailsCacheApiService()
-    }
-    
-    internal static func provideDetailsNetworkApiService() -> DetailsNetworkApiService {
-        return DetailsNetworkApiService()
-    }
-    
 }

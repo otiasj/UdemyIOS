@@ -91,9 +91,7 @@ class ItemTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource
     
     func setMainEntity(_ entity: MainEntity) {
         self.mainEntity = entity
-        DispatchQueue.main.async{
-            self.tableView?.reloadData()
-        }
+        self.tableView?.reloadData()
     }
     
     

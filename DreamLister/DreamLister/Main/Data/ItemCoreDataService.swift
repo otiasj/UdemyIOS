@@ -17,19 +17,19 @@ protocol OnDataUpdateListener {
     func onUpdate(indexPath: IndexPath?)
 }
 
-class MainCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDelegate {
+class ItemCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDelegate {
     
-    var onDataUpdateListener: OnDataUpdateListener
+    var onDataUpdateListener: OnDataUpdateListener?
     var fetchedResultsController: NSFetchedResultsController<Item>!
     private var loadObserver: AnyObserver<MainEntity>?
     
     
-    init(onDataUpdateListener: OnDataUpdateListener) {
+    init(onDataUpdateListener: OnDataUpdateListener?) {
         self.onDataUpdateListener = onDataUpdateListener
     }
     
-    func setUpdateListener(onDataUpdateListener: OnDataUpdateListener) {
-        self.onDataUpdateListener = onDataUpdateListener
+    override init() {
+        
     }
     
     /**
@@ -43,11 +43,21 @@ class MainCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
         }
     }
     
+    func save(detailsEntity: DetailsEntity) {
+        let item = Item(context: context)
+        item.title = detailsEntity.title
+        item.details = detailsEntity.details
+        item.price = detailsEntity.price
+        item.toStore = detailsEntity.store
+        appDelegate.saveContext()
+    }
+    
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
         
         do {
             try fetchedResultsController.performFetch()
@@ -62,11 +72,15 @@ class MainCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        if let onDataUpdateListener = onDataUpdateListener {
         onDataUpdateListener.onBeginUpdate()
+        }
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        if let onDataUpdateListener = onDataUpdateListener {
         onDataUpdateListener.onEndUpdate()
+        }
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -74,24 +88,28 @@ class MainCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
         switch (type) {
         case.insert:
             if let indexPath = newIndexPath {
+                if let onDataUpdateListener = onDataUpdateListener {
                 onDataUpdateListener.onInsert(indexPath: indexPath)
+                }
             }
             break
         case.delete:
             if let indexPath = indexPath {
+                if let onDataUpdateListener = onDataUpdateListener {
                 onDataUpdateListener.onDelete(indexPath: indexPath)
+                }
             }
             break
         case.update:
-            if let indexPath = indexPath {
+            if let indexPath = indexPath, let onDataUpdateListener = onDataUpdateListener {
                 onDataUpdateListener.onUpdate(indexPath: indexPath)
             }
             break
         case.move:
-            if let indexPath = indexPath {
+            if let indexPath = indexPath, let onDataUpdateListener = onDataUpdateListener  {
                 onDataUpdateListener.onDelete(indexPath: indexPath)
             }
-            if let indexPath = newIndexPath {
+            if let indexPath = newIndexPath, let onDataUpdateListener = onDataUpdateListener  {
                 onDataUpdateListener.onInsert(indexPath: indexPath)
             }
             break

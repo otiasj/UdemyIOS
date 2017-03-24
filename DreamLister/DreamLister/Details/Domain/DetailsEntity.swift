@@ -10,15 +10,16 @@
 
 class DetailsEntity {
     
-    //This is just for explaining the purpose of this class
-    //Delete this and replace with the variable needed by your feature
-    let someValue: String
+    let title: String
+    let details: String
+    let price: Double
+    //let toImage: Image
+    let store: Store
     
-    init(loadedFrom: String) {
-        someValue = loadedFrom
-    }
-    
-    init(copy: DetailsEntity) {
-        someValue = copy.someValue
+    init(title: String, price: Double, details: String, store: Store) {
+        self.title = title
+        self.details = details
+        self.store = store
+        self.price = price
     }
 }

@@ -13,18 +13,21 @@ class DetailsPresenterImpl: DetailsPresenter
     let disposeBag = DisposeBag()
     let detailsView: DetailsView
     let detailsDelegate: DetailsDelegate
+    let storePickerAdapter: StorePickerAdapter
     
     var isLoading = false
     
     // MARK: lifecycle
     init(detailsView: DetailsView,
-        detailsDelegate: DetailsDelegate) {
+        detailsDelegate: DetailsDelegate,
+        storePickerAdapter: StorePickerAdapter) {
         self.detailsView = detailsView
         self.detailsDelegate = detailsDelegate
+        self.storePickerAdapter = storePickerAdapter
     }
     
-    // MARK: - main presenter logic
-    func load()
+    // MARK: - presenter logic
+    func loadStores()
     {
         if (!isLoading) {
             isLoading = true
@@ -32,9 +35,9 @@ class DetailsPresenterImpl: DetailsPresenter
             print("Details loading...")
             detailsDelegate.load(params: ["Some parameter key": "Some parameter value"])
                 .subscribe(
-                    onNext: { detailsEntity in
+                    onNext: { stores in
                         print("onNext")
-                        self.onResponse(detailsEntity)
+                        self.onResponse(stores)
                 },
                     onError: { error in
                         print(error)
@@ -54,10 +57,29 @@ class DetailsPresenterImpl: DetailsPresenter
         }
     }
     
+    func createItem(title: String?,
+                    price: String?,
+                    details: String?,
+                    store: Store?) {
+        if let title = title,
+            !title.isEmpty,
+            let price = price,
+            !price.isEmpty,
+            let details = details,
+            !details.isEmpty,
+            let store = store {
+            let item = DetailsEntity(title: title, price: (price as NSString).doubleValue, details: details, store: store)
+            detailsDelegate.save(item)
+            detailsView.navigateToMain()
+        } else {
+            detailsView.showErrorMessage(ErrorMessage: "Missing values")
+        }
+    }
+    
     // MARK: - load Event handling
-    func onResponse(_ detailsEntity: DetailsEntity) {
+    func onResponse(_ stores: [Store]) {
+        storePickerAdapter.setStores(stores: stores)
         detailsView.displayMessage(Message: "detailsEntity loaded")
-        detailsView.navigateToMain()
     }
     
     func onError(_ error: Error) {
