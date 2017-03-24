@@ -28,8 +28,8 @@ class MainViewController: UIViewController, MainView
     {
         super.viewDidLoad()
         mainComponent.inject(mainView: self)
-        tableView.delegate = itemTableViewAdapter
-        tableView.dataSource = itemTableViewAdapter
+        itemTableViewAdapter?.setTableView(tableView: tableView)
+        mainPresenter?.load()
     }
     
     // MARK: - Display logic
@@ -48,7 +48,6 @@ class MainViewController: UIViewController, MainView
     func navigateToDetails() {
         print("Navigating to Details")
         performSegue(withIdentifier: "Details", sender: self)
-        
     }
     
     func showLoading() {

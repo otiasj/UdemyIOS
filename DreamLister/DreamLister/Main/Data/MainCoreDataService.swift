@@ -19,8 +19,14 @@ protocol OnDataUpdateListener {
 
 class MainCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDelegate {
     
+    var onDataUpdateListener: OnDataUpdateListener
     var fetchedResultsController: NSFetchedResultsController<Item>!
-    var onDataUpdateListener: OnDataUpdateListener?
+    private var loadObserver: AnyObserver<MainEntity>?
+    
+    
+    init(onDataUpdateListener: OnDataUpdateListener) {
+        self.onDataUpdateListener = onDataUpdateListener
+    }
     
     func setUpdateListener(onDataUpdateListener: OnDataUpdateListener) {
         self.onDataUpdateListener = onDataUpdateListener
@@ -30,62 +36,62 @@ class MainCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
      * Load some data from cache
      */
     func load(withParams: NSDictionary) -> Observable<MainEntity>{
-        //FIXME this is returning a mock response
-        return Observable<MainEntity>.just(MainEntity(loadedFrom: "Cache"))
-        //        return Observable<TestEntity>.empty() //emulate no cache
+        return Observable<MainEntity>.create { observer in
+            self.loadObserver = observer
+            self.attemptFetch()
+            return Disposables.create()
+        }
     }
     
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         do {
             try fetchedResultsController.performFetch()
+            print("fetch success: \(fetchedResultsController.fetchedObjects?.count)")
+            loadObserver?.onNext(MainEntity(sections: fetchedResultsController.sections!, itemGetter: fetchedResultsController))
+            loadObserver?.onCompleted()
         } catch {
             let error = error as NSError
             print("\(error)")
+            loadObserver?.onError(error)
         }
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        if let onDataUpdateListener = onDataUpdateListener {
-            onDataUpdateListener.onBeginUpdate()
-        }
+        onDataUpdateListener.onBeginUpdate()
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        if let onDataUpdateListener = onDataUpdateListener {
-            onDataUpdateListener.onEndUpdate()
-        }
+        onDataUpdateListener.onEndUpdate()
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch (type) {
         case.insert:
-            if let indexPath = newIndexPath, let onDataUpdateListener = onDataUpdateListener {
+            if let indexPath = newIndexPath {
                 onDataUpdateListener.onInsert(indexPath: indexPath)
             }
             break
         case.delete:
-            if let indexPath = indexPath, let onDataUpdateListener = onDataUpdateListener {
+            if let indexPath = indexPath {
                 onDataUpdateListener.onDelete(indexPath: indexPath)
             }
             break
         case.update:
-            if let indexPath = indexPath, let onDataUpdateListener = onDataUpdateListener {
+            if let indexPath = indexPath {
                 onDataUpdateListener.onUpdate(indexPath: indexPath)
             }
             break
         case.move:
-            if let indexPath = indexPath, let onDataUpdateListener = onDataUpdateListener {
-                //tableView.deleteRows(at: [indexPath], with: .fade)
+            if let indexPath = indexPath {
                 onDataUpdateListener.onDelete(indexPath: indexPath)
             }
-            if let indexPath = newIndexPath, let onDataUpdateListener = onDataUpdateListener {
-                //tableView.insertRows(at: [indexPath], with: .fade)
+            if let indexPath = newIndexPath {
                 onDataUpdateListener.onInsert(indexPath: indexPath)
             }
             break

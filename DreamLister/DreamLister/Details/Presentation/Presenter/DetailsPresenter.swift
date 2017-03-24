@@ -10,4 +10,5 @@
 
 protocol DetailsPresenter {
     func load()
+
 }

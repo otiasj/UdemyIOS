@@ -8,17 +8,34 @@
 //  Copyright (c) 2017 otiasj. All rights reserved.
 //
 
+import CoreData
+
 class MainEntity {
     
-    //This is just for explaining the purpose of this class
-    //Delete this and replace with the variable needed by your feature
-    let someValue: String
+    private let sections: [NSFetchedResultsSectionInfo]
+    private let itemGetter: ItemGetter
     
-    init(loadedFrom: String) {
-        someValue = loadedFrom
+    init(sections: [NSFetchedResultsSectionInfo], itemGetter: ItemGetter) {
+        self.sections = sections
+        self.itemGetter = itemGetter
     }
     
     init(copy: MainEntity) {
-        someValue = copy.someValue
+        self.sections = copy.sections
+        self.itemGetter = copy.itemGetter
     }
+
+    func getNumberOfSections() -> Int {
+        return sections.count
+    }
+    
+    func getNumberOfRowsForSection(_ sectionIndex: Int) -> Int {
+        let sectionInfo = sections[sectionIndex]
+        return sectionInfo.numberOfObjects
+    }
+    
+    func getItemAt(indexPath: IndexPath) -> Item {
+        return itemGetter.item(at: indexPath)
+    }
+    
 }

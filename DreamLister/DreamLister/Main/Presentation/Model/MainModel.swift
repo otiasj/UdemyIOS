@@ -13,10 +13,5 @@ class MainModel : MainEntity {
     init(from : MainEntity) {
         super.init(copy: from)
     }
-    
-    // FIXME This is a function to demonstrate what type of data manipulation we are expecting to happen in this class
-    // This should be deleted and adapted according to your feature needs.
-    func getEntityOrigin() -> String {
-        return "This Entity was loaded from \(super.someValue)"
-    }
+
 }

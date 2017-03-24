@@ -19,8 +19,6 @@ class DetailsViewController: UIViewController, DetailsView
     var detailsPresenter: DetailsPresenter?
 
     // MARK: - @IBOutlet
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var loadButton: UIButton!
     
     // MARK: - View lifecycle
     override func viewDidLoad()
@@ -28,16 +26,12 @@ class DetailsViewController: UIViewController, DetailsView
         super.viewDidLoad()
         detailsComponent.inject(detailsView: self)
         
-        titleLabel.text = "Details"
-        loadButton.setTitle("Navigate to Main", for: .normal)
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
     }
 
     // MARK: - @IBOutlet @IBAction
-    @IBAction func onLoadClick(_ sender: Any) {
-        if let detailsPresenter = detailsPresenter {
-            detailsPresenter.load()
-        }
-    }
     
     // MARK: - Display logic
     func displayMessage(Message : String) {

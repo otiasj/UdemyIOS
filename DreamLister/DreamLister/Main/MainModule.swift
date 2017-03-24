@@ -15,12 +15,14 @@ class MainModule {
     private let itemTableViewAdapter: ItemTableViewAdapter;
     private let mainPresenter: MainPresenter
     private let mainDelegate: MainDelegate
+    private let mainCoreDataService: MainCoreDataService
     
     //Be careful in the order of the creation of instances
     init(mainView: MainView) {
         self.mainView = mainView
         self.itemTableViewAdapter = ItemTableViewAdapter()
-        self.mainDelegate = MainModule.provideMainDelegate()
+        self.mainCoreDataService = MainCoreDataService(onDataUpdateListener: itemTableViewAdapter)
+        self.mainDelegate = MainDelegateImpl(mainCoreDataService: mainCoreDataService)
         self.mainPresenter = MainPresenterImpl(mainView: mainView, mainDelegate: mainDelegate, itemTableViewAdapter: itemTableViewAdapter)
     }
     
@@ -31,17 +33,5 @@ class MainModule {
     func provideMainPresenter() -> MainPresenter {
        return mainPresenter
     }
-    
-    internal static func provideMainDelegate() -> MainDelegateImpl {
-        return MainDelegateImpl(mainCoreDataService: provideMainCoreDataService(), mainNetworkApiService: provideMainNetworkApiService())
-    }
-    
-    internal static func provideMainCoreDataService() -> MainCoreDataService {
-        return MainCoreDataService()
-    }
-    
-    internal static func provideMainNetworkApiService() -> MainNetworkApiService {
-        return MainNetworkApiService()
-    }
-    
+
 }

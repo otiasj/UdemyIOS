@@ -23,6 +23,7 @@ class MainPresenterImpl: MainPresenter
         self.mainView = mainView
         self.mainDelegate = mainDelegate
         self.itemTableViewAdapter = itemTableViewAdapter
+        createFakeData()
     }
     
     // MARK: - main presenter logic
@@ -31,24 +32,19 @@ class MainPresenterImpl: MainPresenter
         if (!isLoading) {
             isLoading = true
             mainView.showLoading()
-            print("Main loading...")
             mainDelegate.load(params: ["Some parameter key": "Some parameter value"])
+                .composeIoToMainThreads()
                 .subscribe(
                     onNext: { mainEntity in
-                        print("onNext")
                         self.onResponse(mainEntity)
                 },
                     onError: { error in
-                        print(error)
                         self.onError(error)
                 },
                     onCompleted: {
-                        print("Completed")
                         self.onComplete()
                 },
-                    onDisposed: {
-                        print("Disposed")
-                }
+                    onDisposed: {}
                 )
                 .addDisposableTo(disposeBag)
         } else {
@@ -56,10 +52,34 @@ class MainPresenterImpl: MainPresenter
         }
     }
     
+    func createFakeData() {
+        let item = Item(context: context)
+        item.title = "item 1"
+        item.price = 1800
+        item.details = "some details about item 1"
+        
+        let item2 = Item(context: context)
+        item2.title = "item 2"
+        item2.price = 100
+        item2.details = "some details about item 2"
+        
+        let item3 = Item(context: context)
+        item3.title = "item 3"
+        item3.price = 11
+        item3.details = "some details about item 3"
+        
+        let item4 = Item(context: context)
+        item4.title = "item 4"
+        item4.price = 57
+        item4.details = "some details about item 4"
+        
+        //appDelegate.saveContext()
+    }
+    
     // MARK: - load Event handling
     func onResponse(_ mainEntity: MainEntity) {
         mainView.displayMessage(Message: "mainEntity loaded")
-        mainView.navigateToDetails()
+        itemTableViewAdapter.setMainEntity(mainEntity)
     }
     
     func onError(_ error: Error) {
