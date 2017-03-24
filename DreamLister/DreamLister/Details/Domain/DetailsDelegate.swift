@@ -14,4 +14,5 @@ protocol DetailsDelegate {
     //An Asynchronous load
     func load(params: NSDictionary) -> Observable<[Store]>
     func save(_ detailEntity: DetailsEntity)
+    func delete(_ item: Item)
 }

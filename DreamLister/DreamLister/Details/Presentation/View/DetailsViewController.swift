@@ -55,6 +55,12 @@ class DetailsViewController: UIViewController, DetailsView
                                      store: storePickerAdapter?.getSelectedStore())
     }
     
+    @IBAction func deletePressed(_ sender: Any) {
+        if let selectedItem = selectedItem {
+            detailsPresenter?.deleteItem(item: selectedItem)
+        }
+    }
+    
     func displayExistingItem(item: Item) {
         titleField.text = item.title
         priceField.text = "\(item.price)"

@@ -11,4 +11,5 @@
 protocol DetailsPresenter {
     func loadStores()
     func createItem(title: String?, price: String?, details: String?, store: Store?)
+    func deleteItem(item: Item)
 }

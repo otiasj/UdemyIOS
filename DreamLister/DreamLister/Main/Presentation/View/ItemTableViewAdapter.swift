@@ -77,7 +77,7 @@ class ItemTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource
     
     func onDelete(indexPath: IndexPath?) {
         if let tableView = tableView {
-            tableView.insertRows(at: [indexPath!], with: .fade)
+            tableView.deleteRows(at: [indexPath!], with: .fade)
         }
     }
     

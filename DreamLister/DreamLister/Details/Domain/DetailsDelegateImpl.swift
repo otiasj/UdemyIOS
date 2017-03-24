@@ -26,8 +26,12 @@ class DetailsDelegateImpl : DetailsDelegate {
                 .composeIoToMainThreads() // send the work in a background thread and post the results in the UI thread
     }
     
-    //saves an item
     func save(_ detailEntity: DetailsEntity) {
         itemCoreDataService.save(detailsEntity: detailEntity)
     }
+    
+    func delete(_ item: Item) {
+        itemCoreDataService.delete(item: item)
+    }
 }
+

@@ -52,6 +52,11 @@ class ItemCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
         appDelegate.saveContext()
     }
     
+    func delete(item: Item) {
+        context.delete(item)
+        appDelegate.saveContext()
+    }
+    
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)

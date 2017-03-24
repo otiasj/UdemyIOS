@@ -76,6 +76,11 @@ class DetailsPresenterImpl: DetailsPresenter
         }
     }
     
+    func deleteItem(item: Item) {
+        detailsDelegate.delete(item)
+        detailsView.navigateToMain()
+    }
+    
     // MARK: - load Event handling
     func onResponse(_ stores: [Store]) {
         storePickerAdapter.setStores(stores: stores)
