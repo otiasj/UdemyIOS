@@ -26,7 +26,7 @@
                                 <rect key="frame" x="24" y="120" width="343" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" rowHeight="150" id="aYQ-ik-0Sc" customClass="ItemTableViewCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemTableViewCell" rowHeight="150" id="aYQ-ik-0Sc" customClass="ItemTableViewCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aYQ-ik-0Sc" id="mgF-sb-o3m">
@@ -143,7 +143,7 @@
                     <connections>
                         <outlet property="segment" destination="26k-GN-CPy" id="P9E-I2-9oW"/>
                         <outlet property="tableView" destination="2o7-TQ-hkJ" id="NyD-Wg-7Su"/>
-                        <segue destination="sVh-9x-D84" kind="show" identifier="ItemDetails" id="bfa-uY-4pO"/>
+                        <segue destination="sVh-9x-D84" kind="show" identifier="Details" id="bfa-uY-4pO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -310,6 +310,6 @@
         <image name="imagePick" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JSL-B7-Nwl"/>
+        <segue reference="bfa-uY-4pO"/>
     </inferredMetricsTieBreakers>
 </document>

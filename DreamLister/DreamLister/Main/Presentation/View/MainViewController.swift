@@ -50,11 +50,24 @@ class MainViewController: UIViewController, MainView
         performSegue(withIdentifier: "Details", sender: self)
     }
     
+    func navigateToDetails(of: Item) {
+        print("Navigating to Details of \(of.title)")
+        performSegue(withIdentifier: "Details", sender: of)
+    }
+    
     func showLoading() {
         print("Something is loading, show the spinner")
     }
 
     func hideLoading() {
         print("Something finished loading, hide the spinner")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Details", let destination = segue.destination as? DetailsViewController {
+            if let item = sender as? Item {
+                destination.selectedItem = item
+            }
+        }
     }
 }

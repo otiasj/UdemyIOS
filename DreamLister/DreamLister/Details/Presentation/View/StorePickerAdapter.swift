@@ -46,4 +46,16 @@ class StorePickerAdapter: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
     func getSelectedStore() -> Store {
         return stores[(pickerView?.selectedRow(inComponent: 0))!]
     }
+    
+    func getRowForStore(_ storeToFind: Store) -> Int {
+        var index = 0
+        for store in stores {
+            if (storeToFind == store) {
+                return index
+            } else {
+                index += 1
+            }
+        }
+        return 0
+    }
 }

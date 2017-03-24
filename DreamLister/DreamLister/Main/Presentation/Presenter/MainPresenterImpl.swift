@@ -8,7 +8,7 @@
 
 import RxSwift
 
-class MainPresenterImpl: MainPresenter
+class MainPresenterImpl: MainPresenter, ItemCellClickListener
 {
     let disposeBag = DisposeBag()
     let mainView: MainView
@@ -23,7 +23,12 @@ class MainPresenterImpl: MainPresenter
         self.mainView = mainView
         self.mainDelegate = mainDelegate
         self.itemTableViewAdapter = itemTableViewAdapter
+        self.itemTableViewAdapter.clickListener = self
         //createFakeData()
+    }
+    
+    func onItemClicked(item: Item) {
+        mainView.navigateToDetails(of: item)
     }
     
     // MARK: - main presenter logic

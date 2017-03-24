@@ -25,6 +25,7 @@ class DetailsViewController: UIViewController, DetailsView
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var detailsField: UITextField!
     
+    var selectedItem: Item?
     
     // MARK: - View lifecycle
     override func viewDidLoad()
@@ -40,6 +41,10 @@ class DetailsViewController: UIViewController, DetailsView
         
         //createFakeData()
         detailsPresenter?.loadStores()
+        
+        if let selectedItem = selectedItem {
+            displayExistingItem(item: selectedItem)
+        }
     }
 
     // MARK: - @IBOutlet @IBAction
@@ -48,6 +53,13 @@ class DetailsViewController: UIViewController, DetailsView
                                      price: priceField.text,
                                      details: detailsField.text,
                                      store: storePickerAdapter?.getSelectedStore())
+    }
+    
+    func displayExistingItem(item: Item) {
+        titleField.text = item.title
+        priceField.text = "\(item.price)"
+        detailsField.text = item.details
+        storePicker.selectRow((storePickerAdapter?.getRowForStore(item.toStore!))!,inComponent: 0,animated: true)
     }
     
     // MARK: - Display logic

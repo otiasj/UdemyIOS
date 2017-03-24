@@ -14,6 +14,7 @@ protocol MainView {
     func showErrorDialog(ErrorMessage : String)
     func showErrorMessage(ErrorMessage : String)
     func navigateToDetails()
+    func navigateToDetails(of: Item)
     func showLoading()
     func hideLoading()
 }

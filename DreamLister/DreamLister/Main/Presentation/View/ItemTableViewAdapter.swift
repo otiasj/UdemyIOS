@@ -45,14 +45,13 @@ class ItemTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    /*
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     if let clickListener = clickListener {
-     let selectedItem = items[indexPath.row]
-     clickListener.onItemClicked(item: selectedItem)
-     }
-     }
-     */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let clickListener = clickListener {
+            if let selectedItem = self.mainEntity?.getItemAt(indexPath: indexPath) {
+                clickListener.onItemClicked(item: selectedItem)
+            }
+        }
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
