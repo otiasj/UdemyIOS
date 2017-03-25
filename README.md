@@ -1,5 +1,5 @@
 # UdemyIOS
-A small list of swift IOS projects to learn
+Learning IOS following an Udemy tutorial, here are the application I wrote during this course.
 
 # DreamLister
 Testing CoreData, fetching, adding, deleting, saving
