@@ -29,7 +29,13 @@ class MainViewController: UIViewController, MainView
         super.viewDidLoad()
         mainComponent.inject(mainView: self)
         itemTableViewAdapter?.setTableView(tableView: tableView)
-        mainPresenter?.load()
+        mainPresenter?.load(sortBy: 0)
+    }
+    
+    @IBAction func onSort(_ sender: Any) {
+        if let index = segment.selectedSegmentIndex as Int? {
+            mainPresenter?.load(sortBy: index)
+        }
     }
     
     // MARK: - Display logic

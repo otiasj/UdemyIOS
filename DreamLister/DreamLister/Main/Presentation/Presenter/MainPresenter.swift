@@ -9,5 +9,5 @@
 //
 
 protocol MainPresenter {
-    func load()
+    func load(sortBy: Int)
 }

@@ -21,8 +21,8 @@ class DetailsDelegateImpl : DetailsDelegate {
     }
     
     // MARK: - logic
-    func load(params: NSDictionary) -> Observable<[Store]> {
-        return storeCoreDataService.load(withParams: params)
+    func load() -> Observable<[Store]> {
+        return storeCoreDataService.load()
                 .composeIoToMainThreads() // send the work in a background thread and post the results in the UI thread
     }
     

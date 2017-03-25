@@ -48,7 +48,6 @@
 		F9F8DEAA1E82EA5B00701DD5 /* MainPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DE9D1E82EA5B00701DD5 /* MainPresenterImpl.swift */; };
 		F9F8DEAB1E82EA5B00701DD5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DE9F1E82EA5B00701DD5 /* MainView.swift */; };
 		F9F8DEAC1E82EA5B00701DD5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEA01E82EA5B00701DD5 /* MainViewController.swift */; };
-		F9F8DEB41E82F3A000701DD5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEB11E82F3A000701DD5 /* ApiService.swift */; };
 		F9F8DEB51E82F3A000701DD5 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEB31E82F3A000701DD5 /* ObservableType.swift */; };
 		F9F8DEBD1E82FC6300701DD5 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEBC1E82FC6300701DD5 /* MaterialView.swift */; };
 		F9F8DEBF1E82FDE000701DD5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEBE1E82FDE000701DD5 /* ItemTableViewCell.swift */; };
@@ -125,7 +124,6 @@
 		F9F8DE9D1E82EA5B00701DD5 /* MainPresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenterImpl.swift; sourceTree = "<group>"; };
 		F9F8DE9F1E82EA5B00701DD5 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F9F8DEA01E82EA5B00701DD5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		F9F8DEB11E82F3A000701DD5 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		F9F8DEB31E82F3A000701DD5 /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		F9F8DEBC1E82FC6300701DD5 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		F9F8DEBE1E82FDE000701DD5 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 				F9F8DE7A1E82E77F00701DD5 /* Model */,
 				F9BBDF3F1E846649003D72A6 /* StoreCoreDataService.swift */,
 				F9F8DE901E82EA5B00701DD5 /* ItemCoreDataService.swift */,
-				F9F8DEB11E82F3A000701DD5 /* ApiService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -680,7 +677,6 @@
 				F9F8DEAA1E82EA5B00701DD5 /* MainPresenterImpl.swift in Sources */,
 				F9F8DE8A1E82E92E00701DD5 /* Image+CoreDataClass.swift in Sources */,
 				F9F8DEA91E82EA5B00701DD5 /* MainPresenter.swift in Sources */,
-				F9F8DEB41E82F3A000701DD5 /* ApiService.swift in Sources */,
 				F9F8DEA51E82EA5B00701DD5 /* MainEntity.swift in Sources */,
 				F9BBDF5A1E846649003D72A6 /* DetailsView.swift in Sources */,
 				F9BBDF531E846649003D72A6 /* DetailsModule.swift in Sources */,

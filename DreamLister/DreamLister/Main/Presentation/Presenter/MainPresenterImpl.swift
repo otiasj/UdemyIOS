@@ -32,12 +32,20 @@ class MainPresenterImpl: MainPresenter, ItemCellClickListener
     }
     
     // MARK: - main presenter logic
-    func load()
+    func load(sortBy: Int)
     {
         if (!isLoading) {
+            
+            var sortByAsEnum = SortBy.date
+            if sortBy == 1 {
+                sortByAsEnum = SortBy.price
+            } else if sortBy == 2 {
+                sortByAsEnum = SortBy.title
+            }
+            
             isLoading = true
             mainView.showLoading()
-            mainDelegate.load(params: ["Some parameter key": "Some parameter value"])
+            mainDelegate.load(sortBy: sortByAsEnum)
                 .composeIoToMainThreads()
                 .subscribe(
                     onNext: { mainEntity in

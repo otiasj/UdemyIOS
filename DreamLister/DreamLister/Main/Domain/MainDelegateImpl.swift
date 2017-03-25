@@ -18,8 +18,8 @@ class MainDelegateImpl : MainDelegate {
     }
     
     // MARK: - logic
-    func load(params: NSDictionary) -> Observable<MainModel> {
-        return itemCoreDataService.load(withParams: params)
+    func load(sortBy: SortBy) -> Observable<MainModel> {
+        return itemCoreDataService.load(sortBy: sortBy)
             .map { entity in return MainModel(from: entity) } // create a Model wrapping the received entity
             .composeIoToMainThreads() // send the work in a background thread and post the results in the UI thread
     }

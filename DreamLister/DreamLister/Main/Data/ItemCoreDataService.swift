@@ -17,10 +17,22 @@ protocol OnDataUpdateListener {
     func onUpdate(indexPath: IndexPath?)
 }
 
-class ItemCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDelegate {
+enum SortBy{
+    case date
+    case price
+    case title
+}
+
+class ItemCoreDataService: NSObject, NSFetchedResultsControllerDelegate {
     
     var onDataUpdateListener: OnDataUpdateListener?
+    var sortOrder: SortBy = SortBy.date
     var fetchedResultsController: NSFetchedResultsController<Item>!
+    
+    let dateSort = NSSortDescriptor(key: "created", ascending: false)
+    let priceSort = NSSortDescriptor(key: "price", ascending: true)
+    let titleSort = NSSortDescriptor(key: "title", ascending: true)
+    
     private var loadObserver: AnyObserver<MainEntity>?
     
     
@@ -35,7 +47,8 @@ class ItemCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
     /**
      * Load some data from cache
      */
-    func load(withParams: NSDictionary) -> Observable<MainEntity>{
+    func load(sortBy: SortBy) -> Observable<MainEntity>{
+        sortOrder = sortBy
         return Observable<MainEntity>.create { observer in
             self.loadObserver = observer
             self.attemptFetch()
@@ -60,8 +73,16 @@ class ItemCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
     
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-        let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        
+        switch sortOrder {
+        case SortBy.date:
+            fetchRequest.sortDescriptors = [dateSort]
+        case SortBy.price:
+            fetchRequest.sortDescriptors = [priceSort]
+        case SortBy.title:
+            fetchRequest.sortDescriptors = [titleSort]
+        }
+        
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         

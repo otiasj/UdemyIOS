@@ -33,7 +33,7 @@ class DetailsPresenterImpl: DetailsPresenter
             isLoading = true
             detailsView.showLoading()
             print("Details loading...")
-            detailsDelegate.load(params: ["Some parameter key": "Some parameter value"])
+            detailsDelegate.load()
                 .subscribe(
                     onNext: { stores in
                         print("onNext")

@@ -12,5 +12,5 @@ import RxSwift
 
 protocol MainDelegate {
     //An Asynchronous load
-    func load(params: NSDictionary) -> Observable<MainModel>
+    func load(sortBy: SortBy) -> Observable<MainModel>
 }

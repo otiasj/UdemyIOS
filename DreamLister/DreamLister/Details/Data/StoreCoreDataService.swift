@@ -9,14 +9,14 @@
 import RxSwift
 import CoreData
 
-class StoreCoreDataService: ApiService {
+class StoreCoreDataService {
     
     var loadObserver: AnyObserver<[Store]>?
     
     /**
      * Load some data from cache
      */
-    func load(withParams: NSDictionary) -> Observable<[Store]>{
+    func load() -> Observable<[Store]>{
         return Observable<[Store]>.create { observer in
             self.loadObserver = observer
             self.attemptFetch()
