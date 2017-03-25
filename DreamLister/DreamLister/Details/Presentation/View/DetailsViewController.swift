@@ -11,7 +11,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController, DetailsView
+class DetailsViewController: UIViewController, DetailsView, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     
     let detailsComponent = DetailsComponent()
@@ -24,8 +24,10 @@ class DetailsViewController: UIViewController, DetailsView
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var detailsField: UITextField!
+    @IBOutlet weak var thumbImage: UIImageView!
     
     var selectedItem: Item?
+    var imagePicker: UIImagePickerController!
     
     // MARK: - View lifecycle
     override func viewDidLoad()
@@ -45,14 +47,22 @@ class DetailsViewController: UIViewController, DetailsView
         if let selectedItem = selectedItem {
             displayExistingItem(item: selectedItem)
         }
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
     }
 
     // MARK: - @IBOutlet @IBAction
     @IBAction func savePressed(_ sender: Any) {
+        let picture = Image(context: context)
+        picture.image = thumbImage.image
+        
         detailsPresenter?.createItem(title: titleField.text,
                                      price: priceField.text,
                                      details: detailsField.text,
-                                     store: storePickerAdapter?.getSelectedStore())
+                                     store: storePickerAdapter?.getSelectedStore(),
+                                     image: picture
+                                     )
     }
     
     @IBAction func deletePressed(_ sender: Any) {
@@ -61,11 +71,19 @@ class DetailsViewController: UIViewController, DetailsView
         }
     }
     
+    @IBAction func addImage(_ sender: Any) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     func displayExistingItem(item: Item) {
         titleField.text = item.title
         priceField.text = "\(item.price)"
         detailsField.text = item.details
-        storePicker.selectRow((storePickerAdapter?.getRowForStore(item.toStore!))!,inComponent: 0,animated: true)
+        thumbImage.image = item.toImage?.image as? UIImage
+        
+        if let store = item.toStore, let row = storePickerAdapter?.getRowForStore(store) {
+            storePicker.selectRow(row,inComponent: 0,animated: true)
+        }
     }
     
     // MARK: - Display logic
@@ -112,4 +130,12 @@ class DetailsViewController: UIViewController, DetailsView
         
         //appDelegate.saveContext()
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            thumbImage.image = image
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+
 }

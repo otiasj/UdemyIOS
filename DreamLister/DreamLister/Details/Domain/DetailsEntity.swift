@@ -13,13 +13,14 @@ class DetailsEntity {
     let title: String
     let details: String
     let price: Double
-    //let toImage: Image
+    let toImage: Image
     let store: Store
     
-    init(title: String, price: Double, details: String, store: Store) {
+    init(title: String, price: Double, details: String, store: Store, image: Image) {
         self.title = title
         self.details = details
         self.store = store
         self.price = price
+        self.toImage = image
     }
 }

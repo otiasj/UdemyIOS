@@ -162,7 +162,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-dx-bov">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="SaJ-dx-bov">
                                 <rect key="frame" x="16" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="hjb-E5-4Vz"/>
@@ -176,6 +176,9 @@
                                     <constraint firstAttribute="height" constant="100" id="rSB-lW-MzW"/>
                                 </constraints>
                                 <state key="normal" title=" "/>
+                                <connections>
+                                    <action selector="addImage:" destination="sVh-9x-D84" eventType="touchUpInside" id="JgP-sP-EDw"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwl-lb-lJJ">
                                 <rect key="frame" x="124" y="82" width="235" height="30"/>
@@ -278,6 +281,7 @@
                         <outlet property="detailsField" destination="IK2-Fm-vIs" id="Gea-cz-bw0"/>
                         <outlet property="priceField" destination="70p-7w-X3O" id="NR8-Ul-7V0"/>
                         <outlet property="storePicker" destination="DuX-s4-HlB" id="mqh-6I-JIJ"/>
+                        <outlet property="thumbImage" destination="SaJ-dx-bov" id="uiR-md-Gcz"/>
                         <outlet property="titleField" destination="rwl-lb-lJJ" id="YtC-yG-eqX"/>
                     </connections>
                 </viewController>

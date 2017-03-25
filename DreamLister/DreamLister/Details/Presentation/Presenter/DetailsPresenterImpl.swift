@@ -60,15 +60,17 @@ class DetailsPresenterImpl: DetailsPresenter
     func createItem(title: String?,
                     price: String?,
                     details: String?,
-                    store: Store?) {
+                    store: Store?,
+                    image: Image?) {
         if let title = title,
             !title.isEmpty,
             let price = price,
             !price.isEmpty,
             let details = details,
             !details.isEmpty,
+            let image = image,
             let store = store {
-            let item = DetailsEntity(title: title, price: (price as NSString).doubleValue, details: details, store: store)
+            let item = DetailsEntity(title: title, price: (price as NSString).doubleValue, details: details, store: store, image: image)
             detailsDelegate.save(item)
             detailsView.navigateToMain()
         } else {

@@ -49,6 +49,7 @@ class ItemCoreDataService: NSObject, ApiService, NSFetchedResultsControllerDeleg
         item.details = detailsEntity.details
         item.price = detailsEntity.price
         item.toStore = detailsEntity.store
+        item.toImage = detailsEntity.toImage
         appDelegate.saveContext()
     }
     

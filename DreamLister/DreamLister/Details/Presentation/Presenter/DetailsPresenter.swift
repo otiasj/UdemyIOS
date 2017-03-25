@@ -10,6 +10,6 @@
 
 protocol DetailsPresenter {
     func loadStores()
-    func createItem(title: String?, price: String?, details: String?, store: Store?)
+    func createItem(title: String?, price: String?, details: String?, store: Store?, image: Image?)
     func deleteItem(item: Item)
 }
