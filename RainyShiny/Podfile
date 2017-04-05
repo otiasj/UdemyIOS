@@ -1,0 +1,13 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'RainyShiny' do
+	pod "RxSwift"
+	pod 'Alamofire', '~> 4.4'
+end
+
+target 'RainyShinyTests' do
+    pod 'RxBlocking', '~> 3.0'
+    pod 'RxTest',     '~> 3.0'
+    pod 'Alamofire', '~> 4.4'
+end
