@@ -36,7 +36,7 @@ class MainPresenterImpl: MainPresenter
             isLoading = true
             mainView.showLoading()
             print("Main loading...")
-            mainDelegate.load(params: ["latitude": "-36", "longitude": "123"])
+            mainDelegate.load(params: ["latitude": "-36", "longitude": "123", "forecastDayCount": 10])
                 .subscribe(
                     onNext: { mainModel in
                         print("onNext")
@@ -56,7 +56,7 @@ class MainPresenterImpl: MainPresenter
                 )
                 .addDisposableTo(disposeBag)
         } else {
-            mainView.showErrorMessage(ErrorMessage: "Already Loading")
+            mainView.showErrorMessage("Already Loading")
         }
     }
     
@@ -68,14 +68,16 @@ class MainPresenterImpl: MainPresenter
     func updateUiWith(_ mainModel: MainModel) {
         mainView.setCity(cityName: mainModel.formatedCityName)
         mainView.setDate(formatedDate: mainModel.formatedDate)
-        mainView.setCurrentTemperature(currentTemperature: mainModel.formatedTemperature)
+        mainView.setCurrentTemperature(currentTemperature: mainModel.formatedCelsiusTemperature)
         mainView.setWeatherType(weatherType: mainModel.formatedWeatherType)
-        //FIXME weatherTableAdapter.setWeatherData(mainModel.)
+        if let forecasts = mainModel.forecasts {
+            weatherTableAdapter.setWeatherData(forecasts: forecasts as? [CellModel])
+        }
     }
     
     func onError(_ error: Error) {
         mainView.hideLoading()
-        mainView.showErrorMessage(ErrorMessage: error.localizedDescription)
+        mainView.showErrorMessage(error.localizedDescription)
     }
     
     func onComplete()

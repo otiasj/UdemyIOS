@@ -14,6 +14,7 @@ class MainEntity {
     var date: String?
     var weatherType: String?
     var currentTemperature: Double?
+    var forecastEntity: ForecastEntity?
     
     init() {
     }
@@ -23,5 +24,6 @@ class MainEntity {
         self.date = copy.date
         self.weatherType = copy.weatherType
         self.currentTemperature = copy.currentTemperature
+        self.forecastEntity = copy.forecastEntity
     }
 }

@@ -97,7 +97,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VNs-UV-9sm" id="d8s-PR-hEe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8h-DR-PAL">
@@ -147,6 +147,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.8158012656585284" green="0.95966846446700504" blue="0.95738714669104175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="T3s-FQ-zIH" firstAttribute="top" secondItem="d8s-PR-hEe" secondAttribute="topMargin" constant="10" id="2d4-fx-x8l"/>
                                                 <constraint firstItem="T3s-FQ-zIH" firstAttribute="leading" secondItem="v8h-DR-PAL" secondAttribute="trailing" constant="8" id="GcZ-kI-S1b"/>
@@ -156,6 +157,13 @@
                                                 <constraint firstItem="v8h-DR-PAL" firstAttribute="leading" secondItem="d8s-PR-hEe" secondAttribute="leadingMargin" constant="8" id="lYU-ZW-5Mo"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="NEM-iM-cSc" id="rHY-Jp-3Rl"/>
+                                            <outlet property="highTemperatureLabel" destination="RP4-Zf-tjD" id="vA5-SR-mhy"/>
+                                            <outlet property="lowTemperatureLabel" destination="hyO-ll-BdR" id="Ap0-ae-bpG"/>
+                                            <outlet property="weatherIcon" destination="v8h-DR-PAL" id="h1d-T9-cVK"/>
+                                            <outlet property="weatherTypeLabel" destination="efJ-4g-dBC" id="gQ7-kK-0ol"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

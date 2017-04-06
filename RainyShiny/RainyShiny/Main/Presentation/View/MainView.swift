@@ -17,5 +17,5 @@ protocol MainView {
 
     func showLoading()
     func hideLoading()
-    func showErrorMessage(ErrorMessage : String)
+    func showErrorMessage(_ errorMessage : String)
 }

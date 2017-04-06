@@ -36,14 +36,6 @@ class RxSwiftTest: XCTestCase {
                 onDisposed: {
                     print("Test Disposed")
             }).dispose()
-        
-//        Observable<HomeSettingsEntity>
-//            .concat([cacheObservable, networkObservable]) // try first on cache, then network
-//            .take(1) // take the first non empty event (first does not exist in rxswift?!)
-//            .map { entity in return HomeSettingsModel(from: entity) } // create a Model wrapping the received entity
-//            .composeIoToMainThreads() // send the work in a background thread and post the results in the UI thread
-//            .subscribe(subject!.asObserver()) // will report the results to the replay subject observer
-//            .addDisposableTo(disposeBag) // clean up after execution
-
+    
     }
 }

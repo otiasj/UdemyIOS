@@ -53,10 +53,11 @@ class MainViewController: UIViewController, MainView
     
     func setWeatherType(weatherType: String) {
         currentWeatherTypeLabel.text = weatherType
+        weatherIconImage.image = UIImage(named: weatherType)
     }
-    
-    func showErrorMessage(ErrorMessage : String) {
-        print("Show errort message : \(ErrorMessage)")
+
+    func showErrorMessage(_ errorMessage : String) {
+        showToast(message: errorMessage)
     }
     
     func navigateToSettings() {

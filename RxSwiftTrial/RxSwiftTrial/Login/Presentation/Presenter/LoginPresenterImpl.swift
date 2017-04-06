@@ -54,7 +54,6 @@ class LoginPresenterImpl: LoginPresenter
     // MARK: - load Event handling
     func onResponse(_ loginEntity: LoginEntity) {
         loginView.displayMessage(Message: "Login loaded")
-        loginView.navigateToMain()
     }
     
     func onError(_ error: Error) {
@@ -63,5 +62,10 @@ class LoginPresenterImpl: LoginPresenter
     
     func onComplete()
     {
+    }
+    
+    func onLoadConfirmed() {
+        print("The User has confirmed the dialog")
+        loginView.navigateToMain()
     }
 }

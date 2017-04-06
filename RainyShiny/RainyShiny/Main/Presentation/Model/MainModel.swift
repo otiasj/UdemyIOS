@@ -29,16 +29,21 @@ class MainModel : MainEntity {
     }
     
     var formatedDate: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .none
-        let currentDate = dateFormatter.string(from: Date())
-        return "Today, \(currentDate)"
+        if let date = self.downloadedDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .none
+            let currentDate = dateFormatter.string(from: date)
+            return "Today, \(currentDate)"
+        } else {
+            return "Date: ?"
+        }
     }
 
-    var formatedTemperature: String {
-        if let temperature = self.currentTemperature {
-            return NSString(format: "%.2f°C", temperature) as String
+    var formatedCelsiusTemperature: String {
+        if let temperature = self.currentTemperatureInKelvin {
+            let temperatureInCelsius = temperature.fromKelvinToCelsius()
+            return NSString(format: "%.2f°C", temperatureInCelsius) as String
         } else {
             return "??.??°C"
         }
@@ -48,7 +53,7 @@ class MainModel : MainEntity {
         if let weatherType = self.weatherType {
             return weatherType.capitalized
         } else {
-            return "?"
+            return ""
         }
     }
 }

@@ -6,15 +6,15 @@ PODS:
     - RxSwift (~> 3.3)
 
 DEPENDENCIES:
-  - RxBlocking (~> 3.0)
+  - RxBlocking
   - RxSwift
-  - RxTest (~> 3.0)
+  - RxTest
 
 SPEC CHECKSUMS:
   RxBlocking: c5918ecb86b8c205a8ccc6d1ff2abb338ddc50a0
   RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   RxTest: f4e7360033fafa743f2f85097efa958402ed442a
 
-PODFILE CHECKSUM: 3b6bc1d4c163baa4651483012f35e1cc1dac1895
+PODFILE CHECKSUM: a6b778b9176d94f874062ff9fa7314c83fad5f8d
 
 COCOAPODS: 1.2.0

@@ -24,11 +24,13 @@
 		F925D27C1E7B42B600BF521E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2751E7B42B600BF521E /* LoginViewController.swift */; };
 		F925D27E1E7B47E500BF521E /* LoginDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D27D1E7B47E500BF521E /* LoginDelegateImpl.swift */; };
 		F925D2801E7B482100BF521E /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D27F1E7B482100BF521E /* LoginEntity.swift */; };
-		F925D2DD1E7C8E7300BF521E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925D2DB1E7C8E7300BF521E /* ApiService.swift */; };
 		F925D3011E7CE8CB00BF521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F925D2FF1E7CE8CB00BF521E /* Main.storyboard */; };
-		F953DC6E1E81E01300463D7C /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953DC6D1E81E01300463D7C /* ObservableType.swift */; };
 		F953DC701E81F60500463D7C /* TestDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953DC6F1E81F60500463D7C /* TestDelegateTest.swift */; };
 		F953DC9C1E82375C00463D7C /* RxSwiftTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953DC9B1E82375C00463D7C /* RxSwiftTest.swift */; };
+		F95D323E1E956A0200FB3327 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D323B1E956A0200FB3327 /* ApiService.swift */; };
+		F95D323F1E956A0200FB3327 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D323D1E956A0200FB3327 /* ObservableType.swift */; };
+		F95D32431E956A8B00FB3327 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D32421E956A8B00FB3327 /* ViewControllerExtension.swift */; };
+		F95D32451E957A9C00FB3327 /* UIPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D32441E957A9C00FB3327 /* UIPaddingLabel.swift */; };
 		F967AB491E8090AB00E16E0B /* TestCacheApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB381E8090AB00E16E0B /* TestCacheApiService.swift */; };
 		F967AB4A1E8090AB00E16E0B /* TestNetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB391E8090AB00E16E0B /* TestNetworkApiService.swift */; };
 		F967AB4B1E8090AB00E16E0B /* TestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB3B1E8090AB00E16E0B /* TestDelegate.swift */; };
@@ -103,11 +105,13 @@
 		F925D2751E7B42B600BF521E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F925D27D1E7B47E500BF521E /* LoginDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDelegateImpl.swift; sourceTree = "<group>"; };
 		F925D27F1E7B482100BF521E /* LoginEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
-		F925D2DB1E7C8E7300BF521E /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Login/ApiService.swift; sourceTree = "<group>"; };
 		F925D3001E7CE8CB00BF521E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F953DC6D1E81E01300463D7C /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		F953DC6F1E81F60500463D7C /* TestDelegateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDelegateTest.swift; path = Test/Domain/TestDelegateTest.swift; sourceTree = "<group>"; };
 		F953DC9B1E82375C00463D7C /* RxSwiftTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftTest.swift; sourceTree = "<group>"; };
+		F95D323B1E956A0200FB3327 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		F95D323D1E956A0200FB3327 /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		F95D32421E956A8B00FB3327 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		F95D32441E957A9C00FB3327 /* UIPaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingLabel.swift; sourceTree = "<group>"; };
 		F967AB381E8090AB00E16E0B /* TestCacheApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCacheApiService.swift; sourceTree = "<group>"; };
 		F967AB391E8090AB00E16E0B /* TestNetworkApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNetworkApiService.swift; sourceTree = "<group>"; };
 		F967AB3B1E8090AB00E16E0B /* TestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDelegate.swift; sourceTree = "<group>"; };
@@ -209,17 +213,16 @@
 		F925D2331E7B3B0700BF521E /* RxSwiftTrial */ = {
 			isa = PBXGroup;
 			children = (
+				F95D32391E956A0200FB3327 /* Core */,
 				F9F8DEC41E83026F00701DD5 /* ___FILEBASENAME___ */,
 				F967AB361E8090AB00E16E0B /* Test */,
 				F925D2681E7B42B600BF521E /* Login */,
-				F925D2DB1E7C8E7300BF521E /* ApiService.swift */,
 				F925D2341E7B3B0700BF521E /* AppDelegate.swift */,
 				F925D2361E7B3B0700BF521E /* ViewController.swift */,
 				F925D23B1E7B3B0700BF521E /* Assets.xcassets */,
 				F925D2FF1E7CE8CB00BF521E /* Main.storyboard */,
 				F925D23D1E7B3B0700BF521E /* LaunchScreen.storyboard */,
 				F925D2401E7B3B0700BF521E /* Info.plist */,
-				F953DC6D1E81E01300463D7C /* ObservableType.swift */,
 			);
 			path = RxSwiftTrial;
 			sourceTree = "<group>";
@@ -306,6 +309,50 @@
 			children = (
 				F925D2741E7B42B600BF521E /* LoginView.swift */,
 				F925D2751E7B42B600BF521E /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F95D32391E956A0200FB3327 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F95D323A1E956A0200FB3327 /* Data */,
+				F95D32401E956A6A00FB3327 /* Presentation */,
+				F95D323C1E956A0200FB3327 /* Utils */,
+			);
+			name = Core;
+			path = "../../../../Library/Developer/Xcode/Templates/CoInspect Feature Templates/Core Files.xctemplate/Core";
+			sourceTree = "<group>";
+		};
+		F95D323A1E956A0200FB3327 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F95D323B1E956A0200FB3327 /* ApiService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F95D323C1E956A0200FB3327 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F95D323D1E956A0200FB3327 /* ObservableType.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F95D32401E956A6A00FB3327 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F95D32411E956A6A00FB3327 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F95D32411E956A6A00FB3327 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F95D32421E956A8B00FB3327 /* ViewControllerExtension.swift */,
+				F95D32441E957A9C00FB3327 /* UIPaddingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -728,16 +775,17 @@
 				F9F8DEDF1E83026F00701DD5 /* ___FILEBASENAME___Presenter.swift in Sources */,
 				F967AB4C1E8090AB00E16E0B /* TestDelegateImpl.swift in Sources */,
 				F9F8DEDC1E83026F00701DD5 /* ___FILEBASENAME___DelegateImpl.swift in Sources */,
-				F953DC6E1E81E01300463D7C /* ObservableType.swift in Sources */,
+				F95D323F1E956A0200FB3327 /* ObservableType.swift in Sources */,
 				F967AB541E8090AB00E16E0B /* TestModule.swift in Sources */,
+				F95D32451E957A9C00FB3327 /* UIPaddingLabel.swift in Sources */,
 				F925D2761E7B42B600BF521E /* LoginDelegate.swift in Sources */,
 				F925D27E1E7B47E500BF521E /* LoginDelegateImpl.swift in Sources */,
 				F925D27A1E7B42B600BF521E /* LoginPresenterImpl.swift in Sources */,
 				F9F8DEDB1E83026F00701DD5 /* ___FILEBASENAME___Delegate.swift in Sources */,
+				F95D323E1E956A0200FB3327 /* ApiService.swift in Sources */,
 				F9F8DEDD1E83026F00701DD5 /* ___FILEBASENAME___Entity.swift in Sources */,
 				F9F8DEE21E83026F00701DD5 /* ___FILEBASENAME___ViewController.swift in Sources */,
 				F925D2351E7B3B0700BF521E /* AppDelegate.swift in Sources */,
-				F925D2DD1E7C8E7300BF521E /* ApiService.swift in Sources */,
 				F9F8DED81E83026F00701DD5 /* ___FILEBASENAME___Module.swift in Sources */,
 				F9F8DEDE1E83026F00701DD5 /* ___FILEBASENAME___Model.swift in Sources */,
 				F925D2781E7B42B600BF521E /* LoginModule.swift in Sources */,
@@ -745,6 +793,7 @@
 				F925D27B1E7B42B600BF521E /* LoginView.swift in Sources */,
 				F9F8DED71E83026F00701DD5 /* ___FILEBASENAME___Component.swift in Sources */,
 				F967AB491E8090AB00E16E0B /* TestCacheApiService.swift in Sources */,
+				F95D32431E956A8B00FB3327 /* ViewControllerExtension.swift in Sources */,
 				F925D2771E7B42B600BF521E /* LoginComponent.swift in Sources */,
 				F967AB531E8090AB00E16E0B /* TestComponent.swift in Sources */,
 				F967AB511E8090AB00E16E0B /* TestView.swift in Sources */,

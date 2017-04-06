@@ -11,6 +11,15 @@
 		812472E8A0318035B8258413 /* Pods_RainyShiny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B01689E07DD5C9213E55505 /* Pods_RainyShiny.framework */; };
 		F95D32361E94343200FB3327 /* WeatherTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D32351E94343200FB3327 /* WeatherTableAdapter.swift */; };
 		F95D32381E943ECF00FB3327 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D32371E943ECF00FB3327 /* WeatherTableViewCell.swift */; };
+		F95D324F1E95888A00FB3327 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D32481E95888A00FB3327 /* ApiService.swift */; };
+		F95D32501E95888A00FB3327 /* UIPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D324B1E95888A00FB3327 /* UIPaddingLabel.swift */; };
+		F95D32511E95888A00FB3327 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D324C1E95888A00FB3327 /* ViewControllerExtension.swift */; };
+		F95D32521E95888A00FB3327 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D324E1E95888A00FB3327 /* ObservableType.swift */; };
+		F9862A431E95F8220014FF07 /* ForecastNetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A421E95F8220014FF07 /* ForecastNetworkApiService.swift */; };
+		F9862A451E9613CF0014FF07 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A441E9613CF0014FF07 /* CellModel.swift */; };
+		F9862A4A1E9617250014FF07 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A491E9617250014FF07 /* MainEntity.swift */; };
+		F9862A511E96C0600014FF07 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A501E96C0600014FF07 /* Forecast.swift */; };
+		F9862A531E96CB1C0014FF07 /* TemperatureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A521E96CB1C0014FF07 /* TemperatureUtils.swift */; };
 		F99964731E873C6600DDB369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964721E873C6600DDB369 /* AppDelegate.swift */; };
 		F99964781E873C6600DDB369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99964761E873C6600DDB369 /* Main.storyboard */; };
 		F999647B1E873C6600DDB369 /* RainyShiny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F99964791E873C6600DDB369 /* RainyShiny.xcdatamodeld */; };
@@ -18,13 +27,10 @@
 		F99964801E873C6600DDB369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F999647E1E873C6600DDB369 /* LaunchScreen.storyboard */; };
 		F999648B1E873C6600DDB369 /* RainyShinyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F999648A1E873C6600DDB369 /* RainyShinyTests.swift */; };
 		F99964961E873C6600DDB369 /* RainyShinyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964951E873C6600DDB369 /* RainyShinyUITests.swift */; };
-		F99964BF1E873E2500DDB369 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964A91E873E2500DDB369 /* ApiService.swift */; };
-		F99964C01E873E2500DDB369 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964AB1E873E2500DDB369 /* ObservableType.swift */; };
 		F99964C11E873E2500DDB369 /* MainCacheApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964AE1E873E2500DDB369 /* MainCacheApiService.swift */; };
 		F99964C21E873E2500DDB369 /* MainNetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964AF1E873E2500DDB369 /* MainNetworkApiService.swift */; };
 		F99964C31E873E2500DDB369 /* MainDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964B11E873E2500DDB369 /* MainDelegate.swift */; };
 		F99964C41E873E2500DDB369 /* MainDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964B21E873E2500DDB369 /* MainDelegateImpl.swift */; };
-		F99964C51E873E2500DDB369 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964B31E873E2500DDB369 /* MainEntity.swift */; };
 		F99964C61E873E2500DDB369 /* MainComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964B41E873E2500DDB369 /* MainComponent.swift */; };
 		F99964C71E873E2500DDB369 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964B51E873E2500DDB369 /* MainModule.swift */; };
 		F99964C81E873E2500DDB369 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964B81E873E2500DDB369 /* MainModel.swift */; };
@@ -60,6 +66,15 @@
 		9B01689E07DD5C9213E55505 /* Pods_RainyShiny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RainyShiny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95D32351E94343200FB3327 /* WeatherTableAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableAdapter.swift; sourceTree = "<group>"; };
 		F95D32371E943ECF00FB3327 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		F95D32481E95888A00FB3327 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		F95D324B1E95888A00FB3327 /* UIPaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingLabel.swift; sourceTree = "<group>"; };
+		F95D324C1E95888A00FB3327 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		F95D324E1E95888A00FB3327 /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		F9862A421E95F8220014FF07 /* ForecastNetworkApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastNetworkApiService.swift; sourceTree = "<group>"; };
+		F9862A441E9613CF0014FF07 /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		F9862A491E9617250014FF07 /* MainEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
+		F9862A501E96C0600014FF07 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		F9862A521E96CB1C0014FF07 /* TemperatureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureUtils.swift; sourceTree = "<group>"; };
 		F999646F1E873C6600DDB369 /* RainyShiny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainyShiny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99964721E873C6600DDB369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F99964771E873C6600DDB369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,13 +88,10 @@
 		F99964911E873C6600DDB369 /* RainyShinyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RainyShinyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99964951E873C6600DDB369 /* RainyShinyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainyShinyUITests.swift; sourceTree = "<group>"; };
 		F99964971E873C6600DDB369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F99964A91E873E2500DDB369 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		F99964AB1E873E2500DDB369 /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		F99964AE1E873E2500DDB369 /* MainCacheApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCacheApiService.swift; sourceTree = "<group>"; };
 		F99964AF1E873E2500DDB369 /* MainNetworkApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNetworkApiService.swift; sourceTree = "<group>"; };
 		F99964B11E873E2500DDB369 /* MainDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDelegate.swift; sourceTree = "<group>"; };
 		F99964B21E873E2500DDB369 /* MainDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDelegateImpl.swift; sourceTree = "<group>"; };
-		F99964B31E873E2500DDB369 /* MainEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
 		F99964B41E873E2500DDB369 /* MainComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainComponent.swift; sourceTree = "<group>"; };
 		F99964B51E873E2500DDB369 /* MainModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
 		F99964B81E873E2500DDB369 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
@@ -136,6 +148,59 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F95D32461E95888A00FB3327 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F95D32471E95888A00FB3327 /* Data */,
+				F95D32491E95888A00FB3327 /* Presentation */,
+				F95D324D1E95888A00FB3327 /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F95D32471E95888A00FB3327 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F95D32481E95888A00FB3327 /* ApiService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F95D32491E95888A00FB3327 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F95D324A1E95888A00FB3327 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F95D324A1E95888A00FB3327 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F95D324B1E95888A00FB3327 /* UIPaddingLabel.swift */,
+				F95D324C1E95888A00FB3327 /* ViewControllerExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F95D324D1E95888A00FB3327 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F95D324E1E95888A00FB3327 /* ObservableType.swift */,
+				F9862A521E96CB1C0014FF07 /* TemperatureUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F9862A481E9617250014FF07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9862A501E96C0600014FF07 /* Forecast.swift */,
+				F9862A491E9617250014FF07 /* MainEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F99964661E873C6600DDB369 = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +226,7 @@
 		F99964711E873C6600DDB369 /* RainyShiny */ = {
 			isa = PBXGroup;
 			children = (
-				F99964A71E873E2500DDB369 /* Core */,
+				F95D32461E95888A00FB3327 /* Core */,
 				F99964AC1E873E2500DDB369 /* Main */,
 				F99964721E873C6600DDB369 /* AppDelegate.swift */,
 				F99964761E873C6600DDB369 /* Main.storyboard */,
@@ -191,31 +256,6 @@
 			path = RainyShinyUITests;
 			sourceTree = "<group>";
 		};
-		F99964A71E873E2500DDB369 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				F99964A81E873E2500DDB369 /* Data */,
-				F99964AA1E873E2500DDB369 /* Utils */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		F99964A81E873E2500DDB369 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				F99964A91E873E2500DDB369 /* ApiService.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		F99964AA1E873E2500DDB369 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				F99964AB1E873E2500DDB369 /* ObservableType.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		F99964AC1E873E2500DDB369 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				F99964AE1E873E2500DDB369 /* MainCacheApiService.swift */,
+				F9862A421E95F8220014FF07 /* ForecastNetworkApiService.swift */,
 				F99964AF1E873E2500DDB369 /* MainNetworkApiService.swift */,
 			);
 			path = Data;
@@ -240,9 +281,9 @@
 		F99964B01E873E2500DDB369 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F9862A481E9617250014FF07 /* Model */,
 				F99964B11E873E2500DDB369 /* MainDelegate.swift */,
 				F99964B21E873E2500DDB369 /* MainDelegateImpl.swift */,
-				F99964B31E873E2500DDB369 /* MainEntity.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -261,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				F99964B81E873E2500DDB369 /* MainModel.swift */,
+				F9862A441E9613CF0014FF07 /* CellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,22 +562,28 @@
 			files = (
 				F99964C81E873E2500DDB369 /* MainModel.swift in Sources */,
 				F99964731E873C6600DDB369 /* AppDelegate.swift in Sources */,
+				F95D324F1E95888A00FB3327 /* ApiService.swift in Sources */,
+				F9862A451E9613CF0014FF07 /* CellModel.swift in Sources */,
 				F95D32361E94343200FB3327 /* WeatherTableAdapter.swift in Sources */,
+				F95D32501E95888A00FB3327 /* UIPaddingLabel.swift in Sources */,
 				F99964C21E873E2500DDB369 /* MainNetworkApiService.swift in Sources */,
 				F99964C61E873E2500DDB369 /* MainComponent.swift in Sources */,
 				F99964C91E873E2500DDB369 /* MainPresenter.swift in Sources */,
 				F95D32381E943ECF00FB3327 /* WeatherTableViewCell.swift in Sources */,
-				F99964BF1E873E2500DDB369 /* ApiService.swift in Sources */,
 				F99964CC1E873E2500DDB369 /* MainViewController.swift in Sources */,
 				F999647B1E873C6600DDB369 /* RainyShiny.xcdatamodeld in Sources */,
 				F99964C31E873E2500DDB369 /* MainDelegate.swift in Sources */,
+				F9862A4A1E9617250014FF07 /* MainEntity.swift in Sources */,
 				F99964CB1E873E2500DDB369 /* MainView.swift in Sources */,
+				F9862A511E96C0600014FF07 /* Forecast.swift in Sources */,
+				F9862A531E96CB1C0014FF07 /* TemperatureUtils.swift in Sources */,
+				F95D32511E95888A00FB3327 /* ViewControllerExtension.swift in Sources */,
+				F95D32521E95888A00FB3327 /* ObservableType.swift in Sources */,
 				F99964C11E873E2500DDB369 /* MainCacheApiService.swift in Sources */,
-				F99964C01E873E2500DDB369 /* ObservableType.swift in Sources */,
+				F9862A431E95F8220014FF07 /* ForecastNetworkApiService.swift in Sources */,
 				F99964CA1E873E2500DDB369 /* MainPresenterImpl.swift in Sources */,
 				F99964C41E873E2500DDB369 /* MainDelegateImpl.swift in Sources */,
 				F99964C71E873E2500DDB369 /* MainModule.swift in Sources */,
-				F99964C51E873E2500DDB369 /* MainEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

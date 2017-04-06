@@ -15,12 +15,15 @@ class MainDelegateImpl : MainDelegate {
     
     let mainCacheApiService: MainCacheApiService
     let mainNetworkApiService: MainNetworkApiService
+    let forecastNetworkApiService: ForecastNetworkApiService
     
     // MARK: lifecycle
     init(mainCacheApiService: MainCacheApiService,
-         mainNetworkApiService: MainNetworkApiService) {
+         mainNetworkApiService: MainNetworkApiService,
+         forecastNetworkApiService: ForecastNetworkApiService) {
         self.mainCacheApiService = mainCacheApiService
         self.mainNetworkApiService = mainNetworkApiService
+        self.forecastNetworkApiService = forecastNetworkApiService
     }
     
     // MARK: - logic
@@ -29,11 +32,22 @@ class MainDelegateImpl : MainDelegate {
             self.subject = ReplaySubject.create(bufferSize: 2)
             
             let cacheObservable = mainCacheApiService.load(withParams: params)
-            let networkObservable = mainNetworkApiService.load(withParams: params)
+            let mainNetworkObservable = mainNetworkApiService.load(withParams: params)
+            let forecastNetworkObservable = forecastNetworkApiService.load(withParams: params)
+            
+            //Fetch both api response and combine them
+            let networkObservable = Observable<MainEntity>.zip(mainNetworkObservable, forecastNetworkObservable) {
+                mainEntity, forecasts in
+                mainEntity.forecasts = [CellModel]()
+                for forecast in forecasts {
+                    mainEntity.forecasts?.append(CellModel(copy: forecast))
+                }
+                return mainEntity
+            }
             
             Observable<MainEntity>
                 .concat(cacheObservable, networkObservable) // try first on cache, then network
-                .take(1) // take the first non empty event (first does not exist in rxswift?!)
+                .take(1) // take the first non empty event
                 .map { entity in return MainModel(copy: entity) } // create a Model wrapping the received entity
                 .composeIoToMainThreads() // send the work in a background thread and post the results in the UI thread
                 .subscribe(subject!.asObserver()) // will report the results to the replay subject observer

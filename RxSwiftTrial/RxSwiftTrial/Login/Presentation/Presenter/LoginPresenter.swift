@@ -8,4 +8,5 @@
 
 protocol LoginPresenter {
     func load()
+    func onLoadConfirmed()
 }

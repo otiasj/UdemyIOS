@@ -12,6 +12,7 @@ import UIKit
 class WeatherTableAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var tableView : UITableView?
+    var forecasts: [CellModel]?
     
     func initView(_ tableView : UITableView) {
         self.tableView = tableView
@@ -19,18 +20,31 @@ class WeatherTableAdapter: NSObject, UITableViewDelegate, UITableViewDataSource 
         self.tableView?.dataSource = self
     }
     
+    func setWeatherData(forecasts: [CellModel]?) {
+        self.forecasts = forecasts
+        tableView?.reloadData()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 1
+        if let forecasts = self.forecasts {
+            return forecasts.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //cellModel =
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell", for: indexPath) as! WeatherTableViewCell
-        //cell.populateWith(model: cellModel)
-        return cell
+        if let cellModels = self.forecasts {
+            let cellModel = cellModels[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell", for: indexPath) as! WeatherTableViewCell
+            cell.populateWith(model: cellModel)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
 }

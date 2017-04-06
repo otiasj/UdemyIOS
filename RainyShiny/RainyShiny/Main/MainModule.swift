@@ -21,7 +21,9 @@ class MainModule {
         self.mainView = mainView
         self.mainDelegate = MainModule.provideMainDelegate()
         self.weatherTableAdapter = WeatherTableAdapter()
-        self.mainPresenter = MainPresenterImpl(mainView: mainView, mainDelegate: mainDelegate, weatherTableAdapter: weatherTableAdapter)
+        self.mainPresenter = MainPresenterImpl(mainView: mainView,
+                                               mainDelegate: mainDelegate,
+                                               weatherTableAdapter: weatherTableAdapter)
     }
     
     func provideMainPresenter() -> MainPresenter {
@@ -33,7 +35,9 @@ class MainModule {
     }
     
     internal static func provideMainDelegate() -> MainDelegateImpl {
-        return MainDelegateImpl(mainCacheApiService: provideMainCacheApiService(), mainNetworkApiService: provideMainNetworkApiService())
+        return MainDelegateImpl(mainCacheApiService: provideMainCacheApiService(),
+                                mainNetworkApiService: provideMainNetworkApiService(),
+                                forecastNetworkApiService: provideForecastNetworkApiService())
     }
     
     internal static func provideMainCacheApiService() -> MainCacheApiService {
@@ -42,5 +46,9 @@ class MainModule {
     
     internal static func provideMainNetworkApiService() -> MainNetworkApiService {
         return MainNetworkApiService()
+    }
+    
+    internal static func provideForecastNetworkApiService() -> ForecastNetworkApiService {
+        return ForecastNetworkApiService()
     }
 }

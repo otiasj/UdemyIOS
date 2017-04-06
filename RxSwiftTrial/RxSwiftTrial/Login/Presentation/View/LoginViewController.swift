@@ -39,18 +39,18 @@ class LoginViewController: UIViewController, LoginView
     
     // MARK: - Display logic
     func displayMessage(Message : String) {
-        print("Display \(Message)")
+        showDialog(title: "Success!", message: Message, button:"Navigate", onDismiss: {self.loginPresenter?.onLoadConfirmed()})
         titleLabel.text = Message
     }
     
     func showErrorDialog(ErrorMessage : String) {
-        print("Display errort dialog : \(ErrorMessage)")
         titleLabel.text = ErrorMessage
+        showDialog(title: "ERROR...", message: ErrorMessage)
     }
     
     func showErrorMessage(ErrorMessage : String) {
         print("Show errort message : \(ErrorMessage)")
-        titleLabel.text = ErrorMessage
+        showToast(message: ErrorMessage)
     }
     
     func navigateToMain() {

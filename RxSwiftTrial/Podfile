@@ -8,6 +8,6 @@ target 'RxSwiftTrial' do
 end
 
 target 'RxSwiftTrialTests' do
-    pod 'RxBlocking', '~> 3.0'
-    pod 'RxTest',     '~> 3.0'
+    pod 'RxBlocking'
+    pod 'RxTest'
 end

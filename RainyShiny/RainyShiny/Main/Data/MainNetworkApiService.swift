@@ -79,11 +79,11 @@ class MainNetworkApiService: ApiService {
         }
         
         if let main = responseValue["main"] as? Dictionary<String, AnyObject> {
-            if let currentTemperatureInKelvin = main["temp"] as? Double {
-                let currentTemperatureInCelsius = (currentTemperatureInKelvin - 273.15) // convert kelvin -> celsius
-                resultEntity.currentTemperature = currentTemperatureInCelsius
-            }
+            resultEntity.currentTemperatureInKelvin = main["temp"] as? Double
         }
+        
+        //set download date to now
+        resultEntity.downloadedDate = Date()
         return resultEntity
     }
     

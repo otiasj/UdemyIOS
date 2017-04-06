@@ -11,8 +11,22 @@ import UIKit
 
 
 class WeatherTableViewCell : UITableViewCell {
+    @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var weatherTypeLabel: UILabel!
+    @IBOutlet weak var lowTemperatureLabel: UILabel!
+    @IBOutlet weak var highTemperatureLabel: UILabel!
     
-    func populateWith(model: MainModel) {
-        
+    
+    func populateWith(model: CellModel) {
+        weatherTypeLabel.text = model.formatedWeatherType
+        if let weatherIconName = model.weatherType {
+            weatherIcon.image = UIImage(named: weatherIconName)
+        } else {
+            weatherIcon.backgroundColor = UIColor.red
+        }
+        lowTemperatureLabel.text = model.formatedLowCelsiusTemperature
+        highTemperatureLabel.text = model.formatedHighCelsiusTemperature
+        dayLabel.text = model.formatedDate
     }
 }
