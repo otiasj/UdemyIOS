@@ -82,6 +82,7 @@ class MainPresenterImpl: MainPresenter
     func onError(_ error: Error) {
         mainView.hideLoading()
         mainView.showErrorMessage(error.localizedDescription)
+        isLoading = false
     }
     
     func onComplete()
