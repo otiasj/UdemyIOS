@@ -44,6 +44,7 @@
 		F967AB531E8090AB00E16E0B /* TestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB471E8090AB00E16E0B /* TestComponent.swift */; };
 		F967AB541E8090AB00E16E0B /* TestModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB481E8090AB00E16E0B /* TestModule.swift */; };
 		F967AB561E80940400E16E0B /* PresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB551E80940400E16E0B /* PresenterTest.swift */; };
+		F9862A571E970AB30014FF07 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A561E970AB30014FF07 /* Preferences.swift */; };
 		F9F8DED71E83026F00701DD5 /* ___FILEBASENAME___Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEC51E83026F00701DD5 /* ___FILEBASENAME___Component.swift */; };
 		F9F8DED81E83026F00701DD5 /* ___FILEBASENAME___Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEC61E83026F00701DD5 /* ___FILEBASENAME___Module.swift */; };
 		F9F8DED91E83026F00701DD5 /* ___FILEBASENAME___CacheApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8DEC81E83026F00701DD5 /* ___FILEBASENAME___CacheApiService.swift */; };
@@ -125,6 +126,7 @@
 		F967AB471E8090AB00E16E0B /* TestComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestComponent.swift; sourceTree = "<group>"; };
 		F967AB481E8090AB00E16E0B /* TestModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModule.swift; sourceTree = "<group>"; };
 		F967AB551E80940400E16E0B /* PresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresenterTest.swift; path = Test/Presentation/Presenter/PresenterTest.swift; sourceTree = "<group>"; };
+		F9862A561E970AB30014FF07 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		F9F8DEC51E83026F00701DD5 /* ___FILEBASENAME___Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___Component.swift"; sourceTree = "<group>"; };
 		F9F8DEC61E83026F00701DD5 /* ___FILEBASENAME___Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___Module.swift"; sourceTree = "<group>"; };
 		F9F8DEC81E83026F00701DD5 /* ___FILEBASENAME___CacheApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "___FILEBASENAME___CacheApiService.swift"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				F95D323B1E956A0200FB3327 /* ApiService.swift */,
+				F9862A561E970AB30014FF07 /* Preferences.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				F9F8DED81E83026F00701DD5 /* ___FILEBASENAME___Module.swift in Sources */,
 				F9F8DEDE1E83026F00701DD5 /* ___FILEBASENAME___Model.swift in Sources */,
 				F925D2781E7B42B600BF521E /* LoginModule.swift in Sources */,
+				F9862A571E970AB30014FF07 /* Preferences.swift in Sources */,
 				F967AB4A1E8090AB00E16E0B /* TestNetworkApiService.swift in Sources */,
 				F925D27B1E7B42B600BF521E /* LoginView.swift in Sources */,
 				F9F8DED71E83026F00701DD5 /* ___FILEBASENAME___Component.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import RxSwift
 @testable import RxSwiftTrial
 
 class RxSwiftTrialTests: XCTestCase {
@@ -34,5 +35,4 @@ class RxSwiftTrialTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
 }
