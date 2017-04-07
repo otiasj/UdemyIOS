@@ -37,11 +37,12 @@ class MainModule {
     internal static func provideMainDelegate() -> MainDelegateImpl {
         return MainDelegateImpl(mainCacheApiService: provideMainCacheApiService(),
                                 mainNetworkApiService: provideMainNetworkApiService(),
-                                forecastNetworkApiService: provideForecastNetworkApiService())
+                                forecastNetworkApiService: provideForecastNetworkApiService(),
+                                locationService: provideLocationService())
     }
     
     internal static func provideMainCacheApiService() -> MainCacheApiService {
-        return MainCacheApiService()
+        return MainCacheApiService(preferences: Preferences())
     }
     
     internal static func provideMainNetworkApiService() -> MainNetworkApiService {
@@ -50,5 +51,9 @@ class MainModule {
     
     internal static func provideForecastNetworkApiService() -> ForecastNetworkApiService {
         return ForecastNetworkApiService()
+    }
+    
+    internal static func provideLocationService() -> LocationService {
+        return LocationService()
     }
 }

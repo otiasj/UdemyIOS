@@ -10,14 +10,22 @@ import Foundation
 
 
 extension Double {
+    
+    func roundNearest(nearest: Double) -> Double {
+        let n = 1/nearest
+        let numberToRound = self * n
+        return numberToRound.rounded() / n
+    }
+    
     //Returns the current Kelvin value in to Celsius
     func fromKelvinToCelsius() -> Double {
-        return self - 273.15
+        let celsius = self - 273.15
+        return celsius.roundNearest(nearest: 0.5)
     }
     
     //Returns the current Kelvin value in to Fahrenheit
-    mutating func fromKelvinToFahrenheit() -> Double {
+    func fromKelvinToFahrenheit() -> Double {
         let kelvins = (self * (9/5) - 459.67)
-        return Double(Darwin.round(10 * kelvins / 10))
+        return kelvins.roundNearest(nearest: 0.25)
     }
 }

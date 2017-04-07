@@ -13,34 +13,40 @@ class MainNetworkApiService: ApiService {
     typealias T = MainEntity
     typealias P = NSDictionary
     
-    let BASE_URL = "http://samples.openweathermap.org/data/2.5/weather"
+    let BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
     let LATITUDE = "lat="
     let LONGITUDE = "lon="
     let APP_ID = "appid="
-    let API_KEY = "b1b15e88fa797225412429c1c50c122a1"
+    let API_KEY = "0f3f4bc9aea43c795f75e7bb14c3f6fe"
     
     /**
      * Load some data from the network
      */
     func load(withParams: NSDictionary) -> Observable<MainEntity>{
         return Observable<MainEntity>.create { observer in
-            
-            if let latitude = withParams.value(forKey: "latitude") as! String?,
-                let longitude = withParams.value(forKey: "longitude") as! String?,
-                !latitude.isEmpty,
-                !longitude.isEmpty
-            {
-                let url = self.createUrl(latitude: latitude, longitude: longitude)
-                self.loadWeather(observer: observer, url: url)
+            let disposable = workScheduler.schedule(()) {
                 
-            } else {
-                observer.onError(NSError(domain: "Missing parameters", code: 422))
+                if let latitude = withParams.value(forKey: "latitude") as! Double?,
+                    let longitude = withParams.value(forKey: "longitude") as! Double?
+                {
+                    let url = self.createUrl(latitude: latitude, longitude: longitude)
+                    self.loadWeather(observer: observer, url: url)
+                } else {
+                    observer.onError(NSError(domain: "Missing parameters", code: 422))
+                }
+                
+                return workScheduler.schedule(()) {
+                    observer.onCompleted()
+                    return Disposables.create()
+                }
             }
-            return Disposables.create()
+            return Disposables.create {
+                disposable.dispose()
+            }
         }
     }
     
-    func createUrl(latitude: String, longitude: String) -> URL {
+    func createUrl(latitude: Double, longitude: Double) -> URL {
         return URL(string: "\(BASE_URL)?\(LATITUDE)\(latitude)&\(LONGITUDE)\(longitude)&\(APP_ID)\(API_KEY)")!
     }
     
@@ -53,7 +59,6 @@ class MainNetworkApiService: ApiService {
             if result.isSuccess {
                 print(response)
                 let mainEntity = self.parseResult(responseValue: response.value as! Dictionary<String, AnyObject>)
-                
                 observer.onNext(mainEntity)
                 observer.onCompleted()
             } else {

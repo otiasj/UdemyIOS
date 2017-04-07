@@ -19,6 +19,14 @@ class MainModel : MainEntity {
     override init(copy: MainEntity) {
         super.init(copy: copy)
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func encode(with coder: NSCoder) {
+        super.encode(with: coder)
+    }
 
     var formatedCityName: String {
         if let cityName = self.cityName {
@@ -43,7 +51,7 @@ class MainModel : MainEntity {
     var formatedCelsiusTemperature: String {
         if let temperature = self.currentTemperatureInKelvin {
             let temperatureInCelsius = temperature.fromKelvinToCelsius()
-            return NSString(format: "%.2f°C", temperatureInCelsius) as String
+            return NSString(format: "%.1f°C", temperatureInCelsius) as String
         } else {
             return "??.??°C"
         }

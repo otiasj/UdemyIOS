@@ -24,12 +24,12 @@ class ForecastNetworkApiService: ApiService {
     typealias T = [Forecast]
     typealias P = NSDictionary
     
-    let BASE_URL = "http://samples.openweathermap.org/data/2.5/forecast/daily"
+    let BASE_URL = "http://api.openweathermap.org/data/2.5/forecast/daily"
     let LATITUDE = "lat="
     let LONGITUDE = "lon="
     let APP_ID = "appid="
     let COUNT = "cnt="
-    let API_KEY = "b1b15e88fa797225412429c1c50c122a1"
+    let API_KEY = "0f3f4bc9aea43c795f75e7bb14c3f6fe"
     
     /**
      * Load some data from the network
@@ -37,11 +37,9 @@ class ForecastNetworkApiService: ApiService {
     func load(withParams: NSDictionary) -> Observable<[Forecast]>{
         return Observable<[Forecast]>.create { observer in
             
-            if let latitude = withParams.value(forKey: "latitude") as! String?,
-                let longitude = withParams.value(forKey: "longitude") as! String?,
-                let days = withParams.value(forKey: "forecastDayCount") as! Int?,
-                !latitude.isEmpty,
-                !longitude.isEmpty
+            if let latitude = withParams.value(forKey: "latitude") as! Double?,
+                let longitude = withParams.value(forKey: "longitude") as! Double?,
+                let days = withParams.value(forKey: "forecastDayCount") as! Int?
             {
                 let url = self.createUrl(latitude: latitude, longitude: longitude, count: days)
                 self.loadWeather(observer: observer, url: url)
@@ -53,7 +51,7 @@ class ForecastNetworkApiService: ApiService {
         }
     }
     
-    func createUrl(latitude: String, longitude: String, count: Int) -> URL {
+    func createUrl(latitude: Double, longitude: Double, count: Int) -> URL {
         return URL(string: "\(BASE_URL)?\(LATITUDE)\(latitude)&\(LONGITUDE)\(longitude)&\(COUNT)\(count)&\(APP_ID)\(API_KEY)")!
     }
     

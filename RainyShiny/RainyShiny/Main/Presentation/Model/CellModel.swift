@@ -18,9 +18,17 @@ class CellModel : Forecast {
         super.init(copy: copy)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func encode(with coder: NSCoder) {
+        super.encode(with: coder)
+    }
+    
     var formatedHighCelsiusTemperature: String {
         if let temperature = self.highTemperatureInKelvin {
-            return NSString(format: "%.2f°C", temperature.fromKelvinToCelsius()) as String
+            return NSString(format: "%.1f°C", temperature.fromKelvinToCelsius()) as String
         } else {
             return "??.??°C"
         }
@@ -28,7 +36,7 @@ class CellModel : Forecast {
     
     var formatedLowCelsiusTemperature: String {
         if let temperature = self.lowTemperatureInKelvin {
-            return NSString(format: "%.2f°C", temperature.fromKelvinToCelsius()) as String
+            return NSString(format: "%.1f°C", temperature.fromKelvinToCelsius()) as String
         } else {
             return "??.??°C"
         }

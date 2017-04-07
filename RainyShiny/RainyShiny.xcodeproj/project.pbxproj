@@ -20,6 +20,8 @@
 		F9862A4A1E9617250014FF07 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A491E9617250014FF07 /* MainEntity.swift */; };
 		F9862A511E96C0600014FF07 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A501E96C0600014FF07 /* Forecast.swift */; };
 		F9862A531E96CB1C0014FF07 /* TemperatureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A521E96CB1C0014FF07 /* TemperatureUtils.swift */; };
+		F9862A551E96DCDF0014FF07 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A541E96DCDF0014FF07 /* LocationService.swift */; };
+		F9862A591E972BB00014FF07 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9862A581E972BB00014FF07 /* Preferences.swift */; };
 		F99964731E873C6600DDB369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99964721E873C6600DDB369 /* AppDelegate.swift */; };
 		F99964781E873C6600DDB369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99964761E873C6600DDB369 /* Main.storyboard */; };
 		F999647B1E873C6600DDB369 /* RainyShiny.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F99964791E873C6600DDB369 /* RainyShiny.xcdatamodeld */; };
@@ -75,6 +77,8 @@
 		F9862A491E9617250014FF07 /* MainEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
 		F9862A501E96C0600014FF07 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F9862A521E96CB1C0014FF07 /* TemperatureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureUtils.swift; sourceTree = "<group>"; };
+		F9862A541E96DCDF0014FF07 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		F9862A581E972BB00014FF07 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		F999646F1E873C6600DDB369 /* RainyShiny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainyShiny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99964721E873C6600DDB369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F99964771E873C6600DDB369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		F95D32471E95888A00FB3327 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F9862A581E972BB00014FF07 /* Preferences.swift */,
 				F95D32481E95888A00FB3327 /* ApiService.swift */,
 			);
 			path = Data;
@@ -274,6 +279,7 @@
 				F99964AE1E873E2500DDB369 /* MainCacheApiService.swift */,
 				F9862A421E95F8220014FF07 /* ForecastNetworkApiService.swift */,
 				F99964AF1E873E2500DDB369 /* MainNetworkApiService.swift */,
+				F9862A541E96DCDF0014FF07 /* LocationService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -577,10 +583,12 @@
 				F99964CB1E873E2500DDB369 /* MainView.swift in Sources */,
 				F9862A511E96C0600014FF07 /* Forecast.swift in Sources */,
 				F9862A531E96CB1C0014FF07 /* TemperatureUtils.swift in Sources */,
+				F9862A551E96DCDF0014FF07 /* LocationService.swift in Sources */,
 				F95D32511E95888A00FB3327 /* ViewControllerExtension.swift in Sources */,
 				F95D32521E95888A00FB3327 /* ObservableType.swift in Sources */,
 				F99964C11E873E2500DDB369 /* MainCacheApiService.swift in Sources */,
 				F9862A431E95F8220014FF07 /* ForecastNetworkApiService.swift in Sources */,
+				F9862A591E972BB00014FF07 /* Preferences.swift in Sources */,
 				F99964CA1E873E2500DDB369 /* MainPresenterImpl.swift in Sources */,
 				F99964C41E873E2500DDB369 /* MainDelegateImpl.swift in Sources */,
 				F99964C71E873E2500DDB369 /* MainModule.swift in Sources */,

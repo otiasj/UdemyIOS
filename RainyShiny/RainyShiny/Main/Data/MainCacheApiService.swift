@@ -10,13 +10,28 @@ import RxSwift
 
 class MainCacheApiService: ApiService {
     
-    /**
-     * Load some data from cache
-     */
-    func load(withParams: NSDictionary) -> Observable<MainEntity>{
-        //FIXME this is returning a mock response
-//        return Observable<MainEntity>.just(MainEntity(copy: "Cache"))
-        return Observable<MainEntity>.empty() //emulate no cache
+    let preferences : Preferences
+    
+    init(preferences : Preferences) {
+        self.preferences = preferences
     }
     
+    /**
+     * Load some data from cache, if the data in cache is today
+     */
+    func load(withParams: NSDictionary) -> Observable<MainEntity>{
+        if let data = UserDefaults.standard.data(forKey: "mainEntity"),
+            let mainEntity = NSKeyedUnarchiver.unarchiveObject(with: data) as? MainEntity,
+            NSCalendar.current.isDateInToday(mainEntity.downloadedDate!) {
+            print("Using cache!")
+            return Observable<MainEntity>.just(mainEntity)
+        } else {
+            return Observable<MainEntity>.empty()
+        }
+    }
+    
+    func store(_ value: MainEntity, withParams: NSDictionary) {
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: value)
+        UserDefaults.standard.set(encodedData, forKey: "mainEntity")
+    }
 }

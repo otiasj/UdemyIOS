@@ -35,8 +35,7 @@ class MainPresenterImpl: MainPresenter
         if (!isLoading) {
             isLoading = true
             mainView.showLoading()
-            print("Main loading...")
-            mainDelegate.load(params: ["latitude": "-36", "longitude": "123", "forecastDayCount": 10])
+            mainDelegate.load()
                 .subscribe(
                     onNext: { mainModel in
                         print("onNext")
