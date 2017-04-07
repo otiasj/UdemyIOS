@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 class MainDelegateImpl : MainDelegate {
-    var subject: ReplaySubject<MainModel>?
     let disposeBag = DisposeBag()
     
     let mainCacheApiService: MainCacheApiService
@@ -31,29 +30,28 @@ class MainDelegateImpl : MainDelegate {
     
     // MARK: - logic
     func load() -> Observable<MainModel> {
-        if subject == nil {
-            self.subject = ReplaySubject.create(bufferSize: 2)
-            let cacheObservable = mainCacheApiService.load(withParams: ["":""])
-            let locationObservable = locationService.loadCurrentLocation()
-            
-            let locationAndNetworkObservable = locationObservable.flatMap { location in
-                    return self.getMainEntityFromNetwork(latitude: location.latitude, longitude: location.longitude)
-            }
-            
-            Observable<MainEntity>
-                .concat(cacheObservable, locationAndNetworkObservable) // try first on cache, then network
-                .take(1) // take the first non empty event
-                .map { entity in
-                    self.mainCacheApiService.store(entity, withParams: ["":""])
-                    return MainModel(copy: entity)  // create a Model wrapping the received entity
-                }
-                .composeIoToMainThreads() // send the work in a background thread and post the results in the UI thread
-                .subscribe(subject!.asObserver()) // will report the results to the replay subject observer
-                .addDisposableTo(disposeBag) // clean up after execution
+        let cacheObservable = mainCacheApiService.load(withParams: ["":""])
+        let locationObservable = locationService.loadCurrentLocation()
+        
+        let locationAndNetworkObservable = locationObservable.flatMap { location in
+            return self.getMainEntityFromNetwork(latitude: location.latitude, longitude: location.longitude)
         }
         
-        return (self.subject?.asObservable())!
+        return Observable<MainEntity>
+            .concat(cacheObservable, locationAndNetworkObservable) // try first on cache, then network
+            .take(1) // take the first non empty event
+            .map { entity in
+                self.mainCacheApiService.store(entity, withParams: ["":""])
+                print("Mapping")
+                return MainModel(copy: entity)  // create a Model wrapping the received entity
+            }
+            .composeIoToMainThreads() // send the work in a background thread and post the results in the UI thread
     }
+    
+    func clearCache() {
+        mainCacheApiService.clear(withParams: ["":""])
+    }
+    
     
     //Fetch the current weather and forecast for given location
     internal func getMainEntityFromNetwork(latitude: Double, longitude: Double) -> Observable<MainEntity> {

@@ -39,6 +39,7 @@ let obs1 = Observable<Int>.create { observer in
         print("Running obs 1")
         //observer.onNext(1)
         return workScheduler.schedule(()) {
+            print("complete obs 1")
             observer.onCompleted()
             return Disposables.create()
         }
@@ -54,6 +55,7 @@ let obs2 = obs1.concat(Observable<Int>.create { observer in
         print("Running obs 2")
          observer.onNext(2)
         return workScheduler.schedule(()) {
+            print("complete obs 2")
             observer.onCompleted()
             return Disposables.create()
         }
@@ -70,6 +72,7 @@ let obs3 = obs2.concat(Observable<Int>.create { observer in
         print("Running obs 3")
         observer.onNext(3)
         return workScheduler.schedule(()) {
+            print("complete obs 3")
             observer.onCompleted()
             return Disposables.create()
         }
@@ -91,6 +94,7 @@ let obs4 = Observable<Int>.create { observer in
         print("Running obs 4")
         //observer.onNext(4)
         return workScheduler.schedule(()) {
+            print("complete obs 4")
             observer.onCompleted()
             return Disposables.create()
         }
@@ -106,6 +110,7 @@ let obs5 = Observable<Int>.create { observer in
         print("Running obs 5")
         //observer.onNext(5)
         return workScheduler.schedule(()) {
+            print("complete obs 5")
             observer.onCompleted()
             return Disposables.create()
         }
@@ -122,6 +127,7 @@ let obs6 = Observable<Int>.create { observer in
         print("Running obs 6")
         observer.onNext(6)
         return workScheduler.schedule(()) {
+            print("complete obs 6")
             observer.onCompleted()
             return Disposables.create()
         }
@@ -133,12 +139,11 @@ let obs6 = Observable<Int>.create { observer in
 }
 
 Observable<Int>.concat([obs4, obs5, obs6]).take(1).mySubscribe()
-
- 
  
 playgroundTimeLimit(seconds: 10)
 
 extension Observable {
+  
     func mySubscribe() {
         self.subscribeOn(workScheduler)
            self.subscribe(

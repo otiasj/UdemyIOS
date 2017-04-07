@@ -59,6 +59,11 @@ class MainPresenterImpl: MainPresenter
         }
     }
     
+    func refresh() {
+        mainDelegate.clearCache()
+        load()
+    }
+    
     // MARK: - load Event handling
     func onResponse(_ mainModel: MainModel) {
         updateUiWith(mainModel)

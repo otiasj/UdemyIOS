@@ -15,6 +15,7 @@ class MainModule {
     private let mainPresenter: MainPresenter
     private let mainDelegate: MainDelegate
     private let weatherTableAdapter: WeatherTableAdapter
+    private static let API_KEY = "0f3f4bc9aea43c795f75e7bb14c3f6fe"
     
     //Be careful in the order of the creation of instances
     init(mainView: MainView) {
@@ -46,14 +47,15 @@ class MainModule {
     }
     
     internal static func provideMainNetworkApiService() -> MainNetworkApiService {
-        return MainNetworkApiService()
+        return MainNetworkApiService(apiKey: API_KEY)
     }
     
     internal static func provideForecastNetworkApiService() -> ForecastNetworkApiService {
-        return ForecastNetworkApiService()
+        return ForecastNetworkApiService(apiKey: API_KEY)
     }
     
     internal static func provideLocationService() -> LocationService {
         return LocationService()
     }
+
 }

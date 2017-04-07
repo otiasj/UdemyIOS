@@ -13,4 +13,5 @@ import RxSwift
 protocol MainDelegate {
     //An Asynchronous load
     func load() -> Observable<MainModel>
+    func clearCache()
 }

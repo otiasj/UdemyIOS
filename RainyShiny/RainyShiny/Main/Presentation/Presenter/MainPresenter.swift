@@ -10,4 +10,5 @@
 
 protocol MainPresenter {
     func load()
+    func refresh()
 }

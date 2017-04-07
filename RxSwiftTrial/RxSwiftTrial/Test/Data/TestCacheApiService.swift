@@ -13,7 +13,7 @@ class TestCacheApiService: ApiService {
     /**
      * Load some data from cache
      */
-    func load(withParams: NSDictionary) -> Observable<TestEntity>{
+    func load(withParams: NSDictionary?) -> Observable<TestEntity>{
         //FIXME this is returning a mock response
         return Observable<TestEntity>.just(TestEntity(loadedFrom: "Cache"))
 //        return Observable<TestEntity>.empty() //emulate no cache

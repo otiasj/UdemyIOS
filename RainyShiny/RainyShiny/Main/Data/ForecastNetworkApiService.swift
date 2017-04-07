@@ -29,25 +29,43 @@ class ForecastNetworkApiService: ApiService {
     let LONGITUDE = "lon="
     let APP_ID = "appid="
     let COUNT = "cnt="
-    let API_KEY = "0f3f4bc9aea43c795f75e7bb14c3f6fe"
+    let API_KEY: String
+    
+    init(apiKey: String) {
+        self.API_KEY = apiKey
+    }
     
     /**
      * Load some data from the network
      */
     func load(withParams: NSDictionary) -> Observable<[Forecast]>{
-        return Observable<[Forecast]>.create { observer in
-            
-            if let latitude = withParams.value(forKey: "latitude") as! Double?,
-                let longitude = withParams.value(forKey: "longitude") as! Double?,
-                let days = withParams.value(forKey: "forecastDayCount") as! Int?
-            {
-                let url = self.createUrl(latitude: latitude, longitude: longitude, count: days)
-                self.loadWeather(observer: observer, url: url)
-                
-            } else {
-                observer.onError(NSError(domain: "Missing parameters in NSDictionnary", code: 422))
+        let observable = Observable<[Forecast]>.create { observer in
+            let disposable = workScheduler.schedule(()) {
+                self.loadWeather(observer : observer, withParams: withParams)
+                return workScheduler.schedule(()) {
+                    print("complete forecast network obs")
+                    //observer.onCompleted()
+                    return Disposables.create()
+                }
             }
-            return Disposables.create()
+            return Disposables.create {
+                //clean up if any
+                disposable.dispose()
+                print("dispose forecast network obs")
+            }
+        }
+        return observable
+    }
+    
+    internal func loadWeather(observer: AnyObserver<[Forecast]>, withParams: NSDictionary) {
+        if let latitude = withParams.value(forKey: "latitude") as! Double?,
+            let longitude = withParams.value(forKey: "longitude") as! Double?,
+            let days = withParams.value(forKey: "forecastDayCount") as! Int?
+        {
+            let url = self.createUrl(latitude: latitude, longitude: longitude, count: days)
+            self.requestWeather(observer: observer, url: url)
+        } else {
+            observer.onError(NSError(domain: "Missing parameters in NSDictionnary", code: 422))
         }
     }
     
@@ -55,16 +73,17 @@ class ForecastNetworkApiService: ApiService {
         return URL(string: "\(BASE_URL)?\(LATITUDE)\(latitude)&\(LONGITUDE)\(longitude)&\(COUNT)\(count)&\(APP_ID)\(API_KEY)")!
     }
     
-    func loadWeather(observer: AnyObserver<[Forecast]>, url: URL) {
+    func requestWeather(observer: AnyObserver<[Forecast]>, url: URL) {
         print("loading \(url)")
         
         Alamofire.request(url).responseJSON { response in
             let result = response.result
             
             if result.isSuccess {
-                print(response)
+                //print(response)
                 var forecasts = self.parseResult(responseValue: response.value as! Dictionary<String, AnyObject>)
                 forecasts.removeFirst(1) // the first element is current weather, which we already display in the main view
+                print("onNext forecasts")
                 observer.onNext(forecasts)
                 observer.onCompleted()
             } else {
@@ -104,5 +123,4 @@ class ForecastNetworkApiService: ApiService {
         return resultForcasts
     }
     
-    typealias MyResponse = () -> ()
 }

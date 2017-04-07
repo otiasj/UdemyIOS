@@ -37,6 +37,9 @@ class MainViewController: UIViewController, MainView
     }
 
     // MARK: - @IBAction
+    @IBAction func onRefreshClicked(_ sender: Any) {
+        mainPresenter?.refresh()
+    }
     
     // MARK: - Display logic
     func setCity(cityName: String) {
