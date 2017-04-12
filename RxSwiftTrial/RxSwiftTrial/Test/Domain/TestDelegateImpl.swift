@@ -23,7 +23,7 @@ class TestDelegateImpl : TestDelegate {
     }
     
     // MARK: - logic
-    func load(params: NSDictionary) -> Observable<TestModel> {
+    func load(params: [String: Any?]) -> Observable<TestModel> {
         if subject == nil {
             self.subject = ReplaySubject.create(bufferSize: 2)
             

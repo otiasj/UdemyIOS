@@ -8,12 +8,12 @@
 
 import RxSwift
 
-class TestCacheApiService: ApiService {
+class TestCacheApiService: LoadService {
     
     /**
      * Load some data from cache
      */
-    func load(withParams: NSDictionary?) -> Observable<TestEntity>{
+    func load(withParams: [String: Any?]?) -> Observable<TestEntity>{
         //FIXME this is returning a mock response
         return Observable<TestEntity>.just(TestEntity(loadedFrom: "Cache"))
 //        return Observable<TestEntity>.empty() //emulate no cache

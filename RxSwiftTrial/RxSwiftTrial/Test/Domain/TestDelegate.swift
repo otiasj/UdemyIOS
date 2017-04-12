@@ -12,5 +12,5 @@ import RxSwift
 
 protocol TestDelegate {
     //An Asynchronous load
-    func load(params: NSDictionary) -> Observable<TestModel>
+    func load(params: [String: Any?]) -> Observable<TestModel>
 }

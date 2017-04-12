@@ -40,6 +40,7 @@
 		F967AB531E8090AB00E16E0B /* TestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB471E8090AB00E16E0B /* TestComponent.swift */; };
 		F967AB541E8090AB00E16E0B /* TestModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB481E8090AB00E16E0B /* TestModule.swift */; };
 		F967AB561E80940400E16E0B /* PresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967AB551E80940400E16E0B /* PresenterTest.swift */; };
+		F97407E11E9DFB360067AC68 /* NetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97407E01E9DFB360067AC68 /* NetworkApiService.swift */; };
 		F9E5D2541E984F38005F1421 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5D24C1E984F38005F1421 /* ApiService.swift */; };
 		F9E5D2551E984F38005F1421 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5D24D1E984F38005F1421 /* Preferences.swift */; };
 		F9E5D2561E984F38005F1421 /* UIPaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5D2501E984F38005F1421 /* UIPaddingLabel.swift */; };
@@ -122,6 +123,7 @@
 		F967AB471E8090AB00E16E0B /* TestComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestComponent.swift; sourceTree = "<group>"; };
 		F967AB481E8090AB00E16E0B /* TestModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModule.swift; sourceTree = "<group>"; };
 		F967AB551E80940400E16E0B /* PresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresenterTest.swift; path = Test/Presentation/Presenter/PresenterTest.swift; sourceTree = "<group>"; };
+		F97407E01E9DFB360067AC68 /* NetworkApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkApiService.swift; sourceTree = "<group>"; };
 		F9E5D24C1E984F38005F1421 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		F9E5D24D1E984F38005F1421 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		F9E5D2501E984F38005F1421 /* UIPaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaddingLabel.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			children = (
 				F9E5D24C1E984F38005F1421 /* ApiService.swift */,
 				F9E5D24D1E984F38005F1421 /* Preferences.swift */,
+				F97407E01E9DFB360067AC68 /* NetworkApiService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				F925D2801E7B482100BF521E /* LoginEntity.swift in Sources */,
 				F967AB4B1E8090AB00E16E0B /* TestDelegate.swift in Sources */,
 				F9F8DEDA1E83026F00701DD5 /* ___FILEBASENAME___NetworkApiService.swift in Sources */,
+				F97407E11E9DFB360067AC68 /* NetworkApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -997,7 +1001,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
-					"___PROJECTNAME___=RxSwiftTrial",
 				);
 				INFOPLIST_FILE = RxSwiftTrialTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

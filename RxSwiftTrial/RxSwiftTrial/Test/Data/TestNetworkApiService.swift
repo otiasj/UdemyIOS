@@ -8,14 +8,14 @@
 
 import RxSwift
 
-class TestNetworkApiService: ApiService {
+class TestNetworkApiService: LoadService {
     typealias T = TestEntity
-    typealias P = NSDictionary
+    typealias P = [String: Any?]
 
     /**
      * Load some data from the network
      */
-    func load(withParams: NSDictionary) -> Observable<TestEntity>{
+    func load(withParams: [String: Any?]) -> Observable<TestEntity>{
         //FIXME this is returning a mock response
         return Observable<TestEntity>.just(TestEntity(loadedFrom: "Network"))
     }
