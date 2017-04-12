@@ -1,0 +1,15 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'Pokedex' do
+
+	pod "RxSwift"
+    pod 'Alamofire', '~> 4.4'
+
+end
+
+target 'PokedexTests' do
+    pod 'RxBlocking'
+    pod 'RxTest'
+    pod 'Alamofire', '~> 4.4'
+end
