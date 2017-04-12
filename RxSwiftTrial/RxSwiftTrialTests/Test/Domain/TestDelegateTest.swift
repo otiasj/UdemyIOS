@@ -24,7 +24,7 @@ class TestDelegateTest: XCTestCase {
         var mockValue = TestEntity(loadedFrom: "mock cache entity")
         var mockObserver: AnyObserver<TestEntity>?
         
-        override func load(withParams: NSDictionary) -> Observable<TestEntity> {
+        override func load(withParams: NSDictionary?) -> Observable<TestEntity> {
             return Observable.create { observer in
                 self.loadCallCount += 1
                 self.mockObserver = observer
@@ -32,11 +32,11 @@ class TestDelegateTest: XCTestCase {
             }
         }
         
-        func store(_ value: TestEntity, withParams: NSDictionary) {
+        func store(_ value: TestEntity, withParams: NSDictionary?) {
             storeCallCount += 1
         }
         
-        func clear(withParams: NSDictionary) {
+        func clear(withParams: NSDictionary?) {
             clearCallCount += 1
         }
         
