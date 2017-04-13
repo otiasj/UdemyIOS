@@ -5,35 +5,6 @@ import RxSwift
 
 var workScheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .default)
 
-/*
- let subscription = Observable<Int>.interval(0.3, scheduler: MainScheduler.instance)
- .observeOn(MainScheduler.instance)
- .subscribe { event in
- print(event)
- }
- */
-
-/*
- let obs1 = Observable<Int>.create { observer in
- print("Obs1 running")
- observer.onNext(3)
- Thread.sleep(forTimeInterval: 2)
- observer.onNext(4)
- observer.onCompleted()
- return Disposables.create()
- }
- 
- let obs2 = Observable<Int>.create { observer in
- print("Obs2 running")
- observer.onNext(5)
- observer.onNext(6)
- observer.onCompleted()
- return Disposables.create()
- }
- 
- obs1.concat(obs2).mySubscribe()
- */
-
 let obs1 = Observable<Int>.create { observer in
     let disposable1 = workScheduler.schedule(()) {
         print("Running obs 1")
@@ -85,7 +56,7 @@ let obs3 = obs2.concat(Observable<Int>.create { observer in
 
 obs3.mySubscribe()
 
-//=====
+//===== with independant observable
 
 workScheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 
@@ -140,25 +111,28 @@ let obs6 = Observable<Int>.create { observer in
 
 Observable<Int>.concat([obs4, obs5, obs6]).take(1).mySubscribe()
  
+
+//COPY This at the bottom
 playgroundTimeLimit(seconds: 10)
 
 extension Observable {
-  
+    
     func mySubscribe() {
         self.subscribeOn(workScheduler)
-           self.subscribe(
-                onNext: { s in
-                    print(s)
-            },
-                onError: {
-                    e in
-                    print("on Error \(e)")
-            },
-                onCompleted: {
-                    print("onCompleted")
-            },
-                onDisposed: {
-                    print("onDisposed")
-            })
+        self.subscribe(
+            onNext: { s in
+                print(s)
+        },
+            onError: {
+                e in
+                print("on Error \(e)")
+        },
+            onCompleted: {
+                print("onCompleted")
+        },
+            onDisposed: {
+                print("onDisposed")
+        })
     }
 }
+
